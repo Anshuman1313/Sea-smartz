@@ -67,7 +67,7 @@ const NavLink = ({ href, children }:NavLinkProps) => (
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-background sticky top-0 z-20 px-6 py-4 flex justify-between items-center text-primary">
+    <nav className="bg-background sticky top-0 z-20 max-md:px-2 px-6 py-4 flex justify-between items-center text-primary">
       <div className="logo font-bold text-2xl">Sea Smartz</div>
       {/* Desktop menu */}
       <ul className="hidden md:flex space-x-8">
@@ -81,7 +81,11 @@ export const Navbar = () => {
       <Hamburger isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
       {/* Mobile menu */}
       {isOpen && (
-        <ul className="absolute top-full left-0 w-full bg-background text-muted-foreground flex flex-col space-y-2 p-6 md:hidden">
+        <motion.ul
+        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.3 }}
+        className="absolute top-full left-0 w-full bg-background text-muted-foreground flex flex-col space-y-2 px-3 py-6 md:hidden">
           {navItems.map((item) => (
             <li key={item.href}>
               <a href={item.href} className="block" onClick={() => setIsOpen(false)}>
@@ -90,7 +94,7 @@ export const Navbar = () => {
             </li>
           ))}
           <div className='h-px bg-muted-foreground inset-x-0 mt-2 mb-2'></div>
-        </ul>
+        </motion.ul>
       )}
     </nav>
   );
