@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import {ReactLenis} from "@/lib/lenis"
+import Footer from "./components/Layout/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,14 +25,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" >
+      <ReactLenis root>
+  
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background `}
       >
-        <main className="min-h-screen text-muted-foreground flex flex-col max-w-5xl  mx-auto ">
+        <main className="min-h-screen text-muted-foreground flex flex-col max-w-7xl  mx-auto ">
 
         {children}
         </main>
+        <Footer/>
       </body>
+        </ReactLenis>
     </html>
   );
 }
