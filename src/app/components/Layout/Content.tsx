@@ -62,7 +62,12 @@ export default function Content() {
     '>
       {/* <NewsletterForm /> */}
       <Section1 />
+     <div className='md:hidden'>
       <Section2 />
+
+     </div>
+     
+      
       <SocialLinks />
     </div>
 
@@ -72,7 +77,7 @@ export default function Content() {
 
 export function SocialLinks() {
   return (
-    <div className="flex gap-5 sm:mx-12 justify-between border-t border-foreground/20 pt-6  text-sm flex-col md:flex-row items-center">
+    <div className="flex gap-5  sm:mx-12 justify-between border-t border-foreground/20 pt-6  text-sm flex-col md:flex-row items-center">
       <div className='flex gap-6'>
 
       {socials.map(s => (
@@ -110,7 +115,7 @@ const Section2 = () => {
 const Nav = () => (
   <div className="flex shrink-0
   gap-20 justify-evenly
-   max-md:gap-10 max-md:flex-col">
+   max-md:gap-10 max-md:flex-col ">
     {navigation.map(section => (
       <div key={section.title} className="flex flex-col gap-2">
         <h3 className="mb-2 uppercase ">{section.title}</h3>
@@ -131,12 +136,10 @@ const NewsletterForm = () => {
     console.log('Newsletter subscription submitted');
   };
   return (
-    <div className="mb-8 border-b border-white/20 pb-8">
+    <div className="mb-8  pb-8">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="flex justify-center mb-3">
-          <Mail className="h-6 w-6 text-white" />
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+        
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
           Stay Ahead with AI Insights
         </h2>
       
