@@ -1,7 +1,12 @@
 "use client"
+import { Meteors } from "@/components/ui/meteors";
+import AnimatedGradientBackground from "./components/gradientbackgrounds/AnimatedGradient";
+import DecorativeBar from "./components/gradientbackgrounds/DecorativeBanner";
+import GrayBanner from "./components/gradientbackgrounds/GrayBanner";
+import HeroSection from "./components/landingpage/HeroSection";
 // import  Lenis from "lenis";
-import {Navbar} from "./components/Layout/Navbar";
 // import { useEffect } from "react";
+import { motion } from "motion/react";
 
 export default function Home() {
   // useEffect(() => {
@@ -17,7 +22,7 @@ export default function Home() {
 
   return (
    <>
-    <Navbar/>
+    <HeroSection/>
    <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0">
     <div className="min-h-screen text-4xl w-full flex justify-center items-center "> This for testing the smoothe scrool behaviour</div>
     <div className="min-h-screen text-4xl w-full flex justify-center items-center "> This for testing the smoothe scrool behaviour</div>

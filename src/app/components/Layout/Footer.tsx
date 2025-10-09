@@ -1,5 +1,5 @@
 import React from 'react'
-import Content from '../landingpage/Content';
+import Content from './Content';
 import { div } from 'motion/react-client';
 
 export default function Footer() {
