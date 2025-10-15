@@ -17,7 +17,7 @@ export const Meteors = ({
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 2 }}
     >
       {meteors.map((el, idx) => {
         const meteorCount = number || 20;
@@ -26,6 +26,7 @@ export const Meteors = ({
 
         return (
           <span
+          suppressHydrationWarning
             key={"meteor" + idx}
             className={cn(
               "animate-meteor-effect absolute h-0.5 w-0.5 rotate-[45deg] rounded-[9999px] bg-slate-500 shadow-[0_0_0_1px_#ffffff10]",
@@ -35,8 +36,8 @@ export const Meteors = ({
             style={{
               top: "-40px", // Start above the container
               left: position + "px",
-              animationDelay: Math.random() * 5 + "s", // Random delay between 0-5s
-              animationDuration: Math.floor(Math.random() * (10 - 5) + 5) + "s", // Keep some randomness in duration
+              animationDelay: Math.random() * 10 + "s", // Random delay between 0-5s
+              animationDuration: Math.floor(Math.random() * (10 - 2) + 5) + "s", // Keep some randomness in duration
             }}
           ></span>
         );

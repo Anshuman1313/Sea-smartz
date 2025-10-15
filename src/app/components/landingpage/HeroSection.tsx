@@ -5,13 +5,14 @@ import GradientText from '../framermotion/GradientText'
 import { ArrowRight } from 'lucide-react'
 import { Particles } from '@/components/ui/particles'
 import { Meteors } from '@/components/ui/meteors'
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
     <>  
     <div className='absolute w-full h-screen overflow-hidden'>
      <Particles className='max-md:hidden'/>
-    <Meteors number={7} positionmeteor={1800}    />
+    <Meteors number={7} positionmeteor={1800}   />
     </div>
     
 
@@ -20,10 +21,36 @@ const HeroSection = () => {
      <section className="min-h-screen flex flex-col items-center justify-center  text-white px-4
      "
     //  [mask-image:linear-gradient(to_top,transparent,black_10%)]
-     style={{ backgroundImage: "linear-gradient(180deg,rgba(0, 0, 0, 1) 3%, rgba(0, 0, 0, 1) 20%, rgba(255, 119, 0, 1) 100%)" }}
+    //  style={{ backgroundImage: "linear-gradient(180deg,rgba(0, 0, 0, 1) 3%, rgba(0, 0, 0, 1) 20%, rgba(255, 119, 0, 1) 100%)" }}
     //  style={{ backgroundImage: "radial-gradient(circle at center bottom, rgba(255,119,0,1) 0%, rgba(0,0,0,1) 100%)" }} 
       // style={{backgroundImage:"linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 3%, rgba(255, 119, 0, 1) 72%, rgba(0, 0, 0, 1) 100%)"}}
     //  style={{backgroundImage: " radial-gradient(circle,rgba(255, 111, 0, 1) 20%, rgba(0, 0, 0, 1) 100%);"}}
+//      style={{
+//   backgroundImage:
+//     "linear-gradient(180deg, #000000 0%, #0d0600 25%, #1c0a00 55%, #ff6a00 100%)",
+// }}
+style={{
+  backgroundImage: `
+    linear-gradient(
+      180deg,
+      #000000 0%,
+      #050200 10%,
+      #0a0400 30%,
+      #1c0a00 50%,
+      #ff6a00 100%
+    )
+  `,
+}}
+// style={{
+//   backgroundImage:
+//     "linear-gradient(180deg, #000000 0%, #0a0600 35%, #1a0e00 55%, #ff6a00 90%)",
+// }}
+// style={{
+//   backgroundImage:
+//     "radial-gradient(circle at 50% 60%, rgba(255,106,0,0.45) 0%, rgba(10,5,0,1) 60%, rgba(0,0,0,1) 100%)",
+// }}
+
+
      >
       
 
@@ -83,10 +110,26 @@ const HeroSection = () => {
       >
         <path 
           d="M0 0H200C240 0 267 100 300 100H1200C1240 100 1265.3333 0 1300 0H1440" 
-          fill="#ff7700"
+          fill="#ff6a00"
         />
       </svg>
           </div>
+
+
+        {/* <div className='bg-chart-3 max-sm:hidden'
+        >
+
+         <svg 
+        viewBox="0 0 1500 50" 
+        preserveAspectRatio="none"
+        style={{   width: '100%', height: 40 }}
+      >
+        <path 
+          d="M0 100H190c50 0 67-100 120-100h890c50 0 67 100 120 100h140" 
+          fill="black"
+        />
+      </svg>
+          </div> */}
     </>
     
   )

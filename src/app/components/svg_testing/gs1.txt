@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  viewBox="913.7066 -1398.6202 1008.1813 397.2208"
+  width="100%"
+  height="auto"
+  preserveAspectRatio="xMidYMid meet"
+  style="max-width: 100%; height: auto; background-color: rgb(249, 250, 251);">
+
+  <g transform="matrix(1, 0, 0, 1, 945.7066, -1033.9429)" opacity="1">
+    <g transform="scale(1)">
+      <defs>
+        <clipPath id="_export_1_re0__shape_BFzYcQ4D1eSY4UoJbeAmU_clip">
+          <path d="M -100 -432.6773 L 1044.1813 -432.6773 L 1044.1813 100.5435 L -100 100.5435 Z" />
+        </clipPath>
+      </defs>
+
+      <g fill="none" stroke="#999999" stroke-width="19" stroke-linejoin="round" stroke-linecap="round" pointer-events="none">
+        <g style="clip-path: url(#_export_1_re0__shape_BFzYcQ4D1eSY4UoJbeAmU_clip);">
+          <rect x="-100" y="-432.6773" width="1144.1813" height="533.2208" opacity="0" />
+          <path d="M 0 0 C 345.0295 9.6305 681.3966 -108.8867 944.1813 -332.6773" />
+        </g>
+
+        <!-- Arrow end -->
+        <path d="M 914.6193 -327.5697 L 944.1813 -332.6773 L 933.8236 -304.5220" stroke="#999999" stroke-opacity="0.99" stroke-width="19" />
+      </g>
+
+      <foreignObject x="507.1864" y="-74.5571" width="-8.5" height="-8.5"
+        class="tl-export-embed-styles tl-rich-text tl-rich-text-svg">
+      </foreignObject>
+    </g>
+  </g>
+</svg>
+
+
+  <g>
+    <rect x="5" y="36" width="240" height="62"
+      style="stroke: #000; fill: rgb(224, 190, 190);" />
+    <rect x="245" y="36" width="240" height="62"
+      style="stroke: #000; fill: rgb(185, 234, 149);" />
+    <rect x="485" y="36" width="240" height="62"
+      style="stroke: #000; fill: rgb(102, 94, 219);" />
+    <rect x="725" y="36" width="240" height="62"
+      style="stroke: #000; fill: rgb(151, 152, 147);" />
+  </g>
