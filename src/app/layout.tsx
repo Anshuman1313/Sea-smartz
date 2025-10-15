@@ -29,6 +29,7 @@ export default function RootLayout({
       <ReactLenis root>
   
       <body
+      suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background `}
       > 
         <main className="min-h-screen text-muted-foreground flex flex-col   mx-auto ">
