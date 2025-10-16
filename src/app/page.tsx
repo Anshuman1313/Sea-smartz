@@ -8,6 +8,7 @@ import HeroSection from "./components/landingpage/HeroSection";
 // import { useEffect } from "react";
 import { motion } from "motion/react";
 import AnimatedPathway from "./components/gsap/Cuve";
+import GrowthCurve from "./components/landingpage/GrowthCurve";
 
 export default function Home() {
   // useEffect(() => {
@@ -25,14 +26,11 @@ export default function Home() {
    <>
     <HeroSection/>
    <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0">
-    <div className="min-h-screen text-4xl w-full flex justify-center items-center ">
-    <div className="h-full w-full p-60">
-
-      <AnimatedPathway/>
-    </div>
+    <div className="min-h-screen  w-full flex justify-center items-center ">
+    <GrowthCurve/>
       
       </div>
-    <div className="min-h-screen text-4xl w-full flex justify-center items-center "> This for testing the smoothe scrool behaviour</div>
+    <div className="min-h-screen text-4xl w-full flex justify-center items-center bg-accent-foreground "> This for testing the smoothe scrool behaviour</div>
     <div className="min-h-screen text-4xl w-full flex justify-center items-center "> This for testing the smoothe scrool behaviour</div>
    </div>
     

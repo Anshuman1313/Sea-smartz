@@ -57,7 +57,8 @@ export default function AnimatedPathway({
     const stageAnimations = useRef<gsap.core.Timeline[]>([]);
     const currentStageRef = useRef<number | undefined>(undefined);
 
-    const positions = ["0% 22%", "21% 43%", "43% 68%", "69% 100%"];
+    const positions = ["0% 22%", "24% 45%", "47% 72%", "73% 100%"];
+    const lineheights = [ "5rem", "6rem", "10rem","17rem"]
 
     useGSAP(
         () => {
@@ -91,14 +92,21 @@ export default function AnimatedPathway({
                 });
 
                 const headings = stage.querySelector(".headings") as HTMLElement;
+                const stageLine = stage.querySelector(".stage-line") as HTMLElement;
+                const stageDot = stage.querySelector(".stage-dot") as HTMLElement;
+
                 const description = stage.querySelector("p") as HTMLElement;
 
+
                 if (headings && description) {
-                    tl.to(headings, { yPercent: -55 }).from(
+                    tl
+                    .to(headings, { yPercent: -55 }).from(
                         description,
                         { y: 10, opacity: 0 },
                         0
-                    );
+                    )
+                    .to([stageLine,stageDot], { backgroundColor: "#ff7700", duration: 0 })
+                        ;
                 }
 
                 stageAnimations.current[index] = tl;
@@ -185,26 +193,38 @@ export default function AnimatedPathway({
                         strokeWidth="19"
                     />
                 </g>
+
             </svg>
 
             {/* Stages */}
-            <div className="flex  w-full  justify-between bg-black  ">
+            <div className="flex   w-full gap-6 justify-evenly bg-black  ">
                 {stages.map((stage, index) => (
                     <div
                         key={index}
                         ref={(el) => {
                             stageRefs.current[index] = el;
                         }}
-                        className="stage  space-y-3 py-2 px-2 "
+                        className="stage mr-5  space-y-3 py-2 px-2 "
                     >
-                        <div className="font-semibold text-xl"> {stage.stageId}</div>
-                        <div className="heading overflow-hidden h-[25px]">
-                            <div className="headings text-[20px]">
+                        <div className="font-semibold text-xl  "> {stage.stageId}</div>
+                        <div className="absolute ml-3   bottom-50 contain-content z-100 items-center "
+                        style={{ height: lineheights[index] }}
+                        >
+                            <div className="rounded-full h-2 w-2 bg-foreground/30  stage-dot">
+
+                            </div>
+                            <div className="h-full  bg-foreground/30  w-px mx-auto stage-line ">
+
+                            </div>
+
+                        </div>
+                        <div className="heading overflow-hidden h-[30px]">
+                            <div className="headings text-[21px] font-bold">
                                 <span>{stage.title}</span>
-                                <span className="block text-chart-3">{stage.title}</span>
+                                <span className="block text-chart-3 ">{stage.title}</span>
                             </div>
                         </div>
-                        <div className="w-full text-sm">
+                        <div className="w-full text-sm font-semibold">
                             <p>{stage.description}</p>
                         </div>
                     </div>
