@@ -5,8 +5,9 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { Observer } from "gsap/Observer";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP, DrawSVGPlugin, Observer);
+gsap.registerPlugin(useGSAP, DrawSVGPlugin, Observer, ScrollTrigger);
 
 interface StageData {
     title: string;
@@ -53,15 +54,18 @@ export default function AnimatedPathway({
 }: AnimatedPathwayProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const pathHighlightRef = useRef<SVGPathElement>(null);
+    const pathFullRef = useRef<SVGPathElement>(null);
     const stageRefs = useRef<(HTMLDivElement | null)[]>([]);
     const stageAnimations = useRef<gsap.core.Timeline[]>([]);
     const currentStageRef = useRef<number | undefined>(undefined);
+    const BarsHeightRef = useRef<(HTMLDivElement)>
 
-    const positions = ["0% 22%", "24% 45%", "47% 72%", "73% 100%"];
-    const lineheights = [ "5rem", "6rem", "10rem","17rem"]
+    const positions = ["0.1% 22%", "22.5% 45%", "47% 72%", "72.5% 100%"];
+    const lineheights = ["5rem", "6rem", "10rem", "17rem"]
 
     useGSAP(
         () => {
+            if (typeof window === undefined) return;
             if (!pathHighlightRef.current) return;
 
             // Initial setup
@@ -70,17 +74,34 @@ export default function AnimatedPathway({
             // Main timeline animation
             const mainTimeline = gsap
                 .timeline()
-                .to("#path-highlight", { opacity: 0, duration: 0.3 })
+                // .to("#path-highlight", { opacity: 0, duration: 0.3 })
+
+                .from( pathHighlightRef.current,{
+                    scrollTrigger: pathFullRef.current ,
+
+                    opacity: 0,
+                    duration:2,
+                })
+                .from([pathFullRef.current,pathHighlightRef.current], {
+                    scrollTrigger: {
+                        trigger: [pathFullRef.current, pathHighlightRef.current],
+                        start: "-281 50%", //object start and then the scroller start where 80% of viewport
+                        end: "-281 25%",
+                        toggleActions: "play none none none",
+                        // markers: true,
+                        scrub: true,
 
 
-                .from("#path-full, #path-highlight", {
-                    opacity: 1,
+                    },
+                    
                     attr: {
                         d: "M0 0C345.0295 0 681.3966 0 944.1813 0L913-23 913 23 942 0",
                     },
-                })
-                .to(pathHighlightRef.current, { drawSVG: "69% 100%", duration: 1 }, "+=0.5")
-                .to(pathHighlightRef.current, { drawSVG: "0% 21%", duration: 1 }, "+=0.5");
+
+                },0)
+             
+            // .to(pathHighlightRef.current, { drawSVG: "69% 100%", duration: 1 }, "+=0.5")
+            // .to(pathHighlightRef.current, { drawSVG: "0% 21%", duration: 1 }, "+=0.5");
 
             // Create animations for each stage
             stageRefs.current.forEach((stage, index) => {
@@ -100,12 +121,13 @@ export default function AnimatedPathway({
 
                 if (headings && description) {
                     tl
-                    .to(headings, { yPercent: -55 }).from(
-                        description,
-                        { y: 10, opacity: 0 },
-                        0
-                    )
-                    .to([stageLine,stageDot], { backgroundColor: "#ff7700", duration: 0 })
+                        .to(headings, { yPercent: -55 }).from(
+                            description,
+                            { y: 10, opacity: 0 },
+                            0
+                        )
+                        .to([stageLine, stageDot], { backgroundColor: "#ff7700", duration: 0 })
+
                         ;
                 }
 
@@ -159,6 +181,31 @@ export default function AnimatedPathway({
 
             window.addEventListener("resize", handleResize);
 
+            //the LineBars animation 
+            // Get all lines at once
+            const lines = gsap.utils.toArray('.LineBar');
+
+            // Animate all together with ONE ScrollTrigger
+            lines.forEach((line, index) => {
+                gsap.fromTo(
+                    line as HTMLElement,
+                    {height: lineheights[0]},
+                    {
+                        height: lineheights[index],
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: containerRef.current, // same trigger for all
+                           
+                            
+                           start: "140 50%",
+                           end: "140 25% ",
+                            scrub: 1,
+                            // markers: true,
+                        },
+                    }
+                );
+            });
+
             return () => {
                 observer.kill();
                 window.removeEventListener("resize", handleResize);
@@ -181,6 +228,7 @@ export default function AnimatedPathway({
                 <g fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path
                         id="path-full"
+                        ref={pathFullRef}
                         d="M0 0C345.0295 9.6305 681.3966-108.8867 944.1813-332.6773L906-326 933-301 944-332"
                         stroke={pathColor}
                         strokeWidth="19"
@@ -207,8 +255,10 @@ export default function AnimatedPathway({
                         className="stage mr-5  space-y-3 py-2 px-2 "
                     >
                         <div className="font-semibold text-xl  "> {stage.stageId}</div>
-                        <div className="absolute ml-3   bottom-50 contain-content z-100 items-center "
-                        style={{ height: lineheights[index] }}
+                        <div className="absolute ml-3   bottom-50 contain-content z-100 items-center
+                        LineBar
+                        "
+                            style={{ height: lineheights[index] }}
                         >
                             <div className="rounded-full h-2 w-2 bg-foreground/30  stage-dot">
 
