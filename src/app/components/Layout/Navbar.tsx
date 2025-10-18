@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import { SeaSmartzLogo } from '@/lib/icons';
 
 const navItems = [
   { href: "#home", label: "Home" },
@@ -72,7 +73,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className="bg-transparent max-md:justify-between sticky top-0 z-20 max-md:px-2 px-6 max-md:pt-4 max-md:pb-2 py-4 flex justify-around items-center text-primary">
-        <div className="logo font-bold text-2xl">SEASMARTZ</div>
+        <div className="logo font-bold text-2xl"><SeaSmartzLogo height={200} width={200} className='hidden'/> <span className=''>SEA</span><span className='text-chart-3 '>SMARTZ</span></div>
         {/* Desktop menu */}
         <ul className="hidden md:flex space-x-8">
           {navItems.map((item) => (
