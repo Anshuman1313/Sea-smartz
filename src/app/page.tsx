@@ -10,6 +10,7 @@ import { motion } from "motion/react";
 import AnimatedPathway from "./components/gsap/Cuve";
 import GrowthCurve from "./components/landingpage/GrowthCurve";
 import ScrollComponent from "./components/gsap/ScrollTrigger1";
+import Indutries from "./components/landingpage/Indutries";
 
 export default function Home() {
   // useEffect(() => {
@@ -27,8 +28,9 @@ export default function Home() {
    <>
     <HeroSection/>
    <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0">
-    <div className="min-h-screen text-4xl w-full flex justify-center items-center  ">
-       {/* <ScrollComponent/> */} Scroll down
+    <div className="min-h-screen text-4xl w-full flex justify-center items-center   ">
+       {/* <ScrollComponent/> */} 
+       <Indutries/>
        </div>
     <div className="min-h-screen  w-full flex justify-center items-center ">
     <GrowthCurve/>
