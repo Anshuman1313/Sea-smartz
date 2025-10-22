@@ -23,7 +23,7 @@ const Indutries = () => {
         gsap.from(split.words,{
             scrollTrigger: {
                 trigger: HeadingRef.current,
-                markers: true,
+                // markers: true,
                 start: "-250 center",
                 end: "-100 center",
                 scrub: true
@@ -39,7 +39,7 @@ const Indutries = () => {
         gsap.from(split2.lines,{
               scrollTrigger: {
                 trigger: HeadingRef.current,
-                markers: true,
+                // markers: true,
                 start: "-250 center",
                 end: "-100 center",
                 scrub: true
