@@ -103,7 +103,7 @@ body {
 
 :root {
   --background: oklch(0% 0 0);
-  --foreground: oklch(0.985 0.001 106.423);
+  --foreground: rgb(250, 250, 249);
   --card: oklch(0.216 0.006 56.043);
   --card-foreground: oklch(0.985 0.001 106.423);
   --popover: oklch(0.216 0.006 56.043);
@@ -118,7 +118,7 @@ body {
   --accent-foreground: oklch(0.985 0.001 106.423);
   --destructive: oklch(0.704 0.191 22.216);
   --border: #ffffff1a;
-  --input: oklch(1 0 0 / 15%);
+  --input: #ffffff26;
   --ring: #79716b;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);

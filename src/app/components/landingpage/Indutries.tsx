@@ -5,7 +5,6 @@ import IndustriesCard from '../framermotion/IndustriesCard'
 import { useGSAP } from '@gsap/react'
 import { SplitText } from 'gsap/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { marker } from 'framer-motion/client';
 
 
 const Indutries = () => {
@@ -26,9 +25,9 @@ const Indutries = () => {
                 // markers: true,
                 start: "-250 center",
                 end: "-100 center",
-                scrub: true
+               
             },
-            y: 80,
+            x: 50,
             duration:1,
             stagger:{
                 each: 0.09,
@@ -42,7 +41,7 @@ const Indutries = () => {
                 // markers: true,
                 start: "-250 center",
                 end: "-100 center",
-                scrub: true
+                
             },
             
             y:80,
@@ -61,7 +60,7 @@ const Indutries = () => {
 
         <IndustriesCard/>
      </div>
-      
+     
     </div>
   )
 }
