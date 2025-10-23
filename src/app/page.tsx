@@ -1,16 +1,10 @@
 "use client"
-import { Meteors } from "@/components/ui/meteors";
-import AnimatedGradientBackground from "./components/gradientbackgrounds/AnimatedGradient";
-import DecorativeBar from "./components/gradientbackgrounds/DecorativeBanner";
-import GrayBanner from "./components/gradientbackgrounds/GrayBanner";
 import HeroSection from "./components/landingpage/HeroSection";
 // import  Lenis from "lenis";
 // import { useEffect } from "react";
-import { motion } from "motion/react";
-import AnimatedPathway from "./components/gsap/Cuve";
 import GrowthCurve from "./components/landingpage/GrowthCurve";
-import ScrollComponent from "./components/gsap/ScrollTrigger1";
 import Indutries from "./components/landingpage/Indutries";
+import LogoSection from "./components/landingpage/LogosSection";
 
 export default function Home() {
   // useEffect(() => {
@@ -32,6 +26,12 @@ export default function Home() {
        {/* <ScrollComponent/> */} 
        <Indutries/>
        </div>
+     
+  <div className="min-h-screen text-4xl w-full  "
+  >
+    <LogoSection/>
+    </div>
+    
     <div className="min-h-screen  w-full flex justify-center items-center ">
     <GrowthCurve/>
       
