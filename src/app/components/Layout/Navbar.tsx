@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import Link from 'next/link';
 // import { SeaSmartzLogo } from '@/lib/icons';
 
 const navItems = [
-  { href: "#home", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "#services", label: "Services" },
-  { href: "#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 interface HamburgerProps {
   isOpen: boolean;
@@ -53,9 +54,9 @@ const NavLink = ({ href, children }: NavLinkProps) => (
       animate="rest"
       exit="rest"
     >
-      <a href={href} className="text-primary no-underline relative z-10">
+      <Link href={href} className="text-primary no-underline relative z-10">
         {children}
-      </a>
+      </Link>
       <motion.span
         className="absolute left-0 bottom-0 h-[2px] bg-primary rounded"
         variants={{
@@ -75,7 +76,12 @@ export const Navbar = () => {
       <nav className="bg-transparent max-md:justify-between sticky top-0 z-20 max-md:px-2 px-6 max-md:pt-4 max-md:pb-2 py-4 flex justify-around items-center text-primary">
         <div className="logo font-bold text-2xl">
           {/* <SeaSmartzLogo height={200} width={200} className='hidden'/>  */}
-          <span className=''>SEA</span><span className='text-chart-3 '>SMARTZ</span></div>
+          
+          <Link href="/">
+          <span className=''>SEA</span><span className='text-chart-3 '>SMARTZ</span>
+          </Link>
+          
+          </div>
         {/* Desktop menu */}
         <ul className="hidden md:flex space-x-8">
           {navItems.map((item) => (

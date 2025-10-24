@@ -16,30 +16,30 @@ export default function Home() {
   //   requestAnimationFrame(raf);
   // }, [])
   //this is for the custom applying for client component
-  
+
 
   return (
-   <>
-    <HeroSection/>
-   <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0">
-    <div className="min-h-screen text-4xl w-full flex justify-center items-center   ">
-       {/* <ScrollComponent/> */} 
-       <Indutries/>
-       </div>
-     
-  <div className="min-h-screen text-4xl w-full  "
-  >
-    <LogoSection/>
-    </div>
-    
-    <div className="min-h-screen  w-full flex justify-center items-center ">
-    <GrowthCurve/>
-      
-      </div>
-    <div className="min-h-screen text-4xl w-full flex justify-center items-center "> This for testing the smoothe scrool behaviour</div>
-   </div>
-    
+    <>
+      <HeroSection />
+      <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0">
 
-   </>
+        <div className="min-h-screen text-4xl w-full  "
+        >
+          <LogoSection />
+        </div>
+        <div className="min-h-screen text-4xl w-full flex justify-center items-center   ">
+          {/* <ScrollComponent/> */}
+          <Indutries />
+        </div>
+
+        <div className="min-h-screen  w-full flex justify-center items-center ">
+          <GrowthCurve />
+
+        </div>
+       
+      </div>
+
+
+    </>
   );
 }

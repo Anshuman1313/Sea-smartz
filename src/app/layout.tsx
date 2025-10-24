@@ -4,6 +4,7 @@ import "./globals.css";
 import {ReactLenis} from "@/lib/lenis"
 import Footer from "./components/Layout/Footer";
 import { Navbar } from "./components/Layout/Navbar";
+import { Toaster } from "sonner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
         {children}
         </main>
         <Footer/>
+        <Toaster />
       </body>
         </ReactLenis>
     </html>
