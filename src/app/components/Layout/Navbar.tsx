@@ -5,8 +5,12 @@ import Link from 'next/link';
 // import { SeaSmartzLogo } from '@/lib/icons';
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "#services", label: "Services" },
+  // { href: "/", label: "Home" },
+  { href: "/technologies", label: "Technologies" },
+  { href: "/teams", label: "Diy Teams" },
+  { href: "/services", label: "Services" },
+  { href: "/industries", label: "Industries" },
+  { href: "/about", label: "About " },
   { href: "/contact", label: "Contact" },
 ];
 interface HamburgerProps {
@@ -90,6 +94,14 @@ export const Navbar = () => {
             </NavLink>
           ))}
         </ul>
+        <div className="logo  text-xl">
+          {/* <SeaSmartzLogo height={200} width={200} className='hidden'/>  */}
+          
+          <Link href="/contact">
+          <span>Contact</span>
+          </Link>
+          
+          </div>
         {/* Mobile toggle button */}
         <Hamburger isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
         {/* Mobile menu */}

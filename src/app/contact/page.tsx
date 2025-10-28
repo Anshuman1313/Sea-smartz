@@ -8,6 +8,8 @@ import "react-phone-input-2/lib/style.css";
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 import Frame from '../components/paper/BackgroundContact';
+import AnimatedGradientText from '../components/paper/BackgroundContact';
+import { VideoText } from '@/components/ui/video-text';
 
 const options = [
     "Less than 5k USD",
@@ -50,6 +52,7 @@ export default function page() {
         onSubmit: async (values, { setSubmitting }) => {
             try {
                 setLoading(true)
+                console.log("values of the form", values)
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: {
@@ -99,19 +102,36 @@ export default function page() {
     return (
         <>
 
-            <div className='bg-background min-h-screen w-full '>
+            <div className='bg-background mb-20 w-full '>
                 {/* <Frame /> */}
-                <div className='  h-[85vh] border-[2px] border-foreground/20  mt-5 rounded-2xl max-w-5xl  mx-auto flex justify-center items-center p-px'>
-                    <div className='h-full w-full  flex rounded-2xl overflow-clip p-2 '>
-                        <div className='h-full w-full  rounded-2xl overflow-hidden'>
+                <div className=' h-[85vh]   border-[2px] border-foreground/20  mt-5 rounded-2xl max-w-5xl  mx-auto flex justify-center items-center p-px'>
+                    <div className=' h-full w-full  flex rounded-2xl overflow-clip p-2 '>
+                        <div className='h-full  w-full  rounded-2xl overflow-hidden '>
+                           
 
-                            <Frame />
+                                {/* <div className='absolute top-50  p-2  z-20 text-5xl text-foreground font-bold '>
+                                    Got a Vision?
+                                    We’ll Code It.
+
+                                </div> */}
+                                {/* <Frame />  */}
+                                <div className="relative h-full w-full ">
+                                    <VideoText src="/FrameBackground.mp4">
+                                    Got a vision
+                                    
+                                    
+                                    </VideoText>
+                                    
+                                </div>
+
+
+                           
 
                         </div>
-                        <div className='h-full bg-background  w-full '>
+                        <div className='h-full bg-background  w-full overflow-y-auto  custom-scrollbar '>
                             <div>
                                 <div className="ml-6 mr-10  md:mx-auto pt-4 md:px-10 flex-1">
-                                    <h1 className="text-3xl font-bold mb-8">Contact Us
+                                    <h1 className="text-3xl font-bold mb-8 text-foreground/80">Contact Us
 
 
                                     </h1>
@@ -129,9 +149,9 @@ export default function page() {
                                                     value={formik.values.yourName}
                                                     onChange={formik.handleChange}
                                                     onBlur={formik.handleBlur}
-                                                    className={`w-full bg-transparent border-b-2 p-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-0 transition-colors ${formik.touched.yourName && formik.errors.yourName
-                                                            ? "border-red-500"
-                                                            : "border-foreground/30 focus:border-[var(--chart-3)]"
+                                                    className={`w-full bg-black focus:bg-black border-b-2 p-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-0   ${formik.touched.yourName && formik.errors.yourName
+                                                        ? "border-red-500"
+                                                        : "border-foreground/30 focus:border-[var(--chart-3)]"
                                                         }`}
                                                 />
                                                 {formik.touched.yourName && formik.errors.yourName && (
@@ -153,18 +173,20 @@ export default function page() {
                                                         name: "phoneNumber",
                                                         onBlur: () => formik.setFieldTouched("phoneNumber", true)
                                                     }}
-                                                    containerClass="w-full relative"
-                                                    inputClass="!w-full !p-2 !pl-14 !text-gray-100 !focus:outline-none !focus:ring-0 !border-0 border-b-2 !shadow-none !bg-transparent"
-                                                    buttonClass="!border-0 !bg-transparent !absolute !left-0 flex items-center justify-center"
-                                                    dropdownClass="!bg-gray-900 !text-gray-100 !shadow-lg !border !border-foreground/30 !rounded-md"
+                                                    containerClass="w-full bg-black relative"
+                                                    inputClass="!w-full !p-2 !pl-14 !text-red-100  !focus:outline-none !focus:ring-0 !border-0 border-b-2 !shadow-none !bg-transparent"
+                                                    buttonClass="!border-0 !bg-black  !absolute !left-0 flex items-center justify-center"
+
+                                                    dropdownClass="!bg-black !text-gray-100  !shadow-lg !border !border-foreground/30 !rounded-md"
+                                                    searchClass='!bg-black'
                                                     countryCodeEditable={false}
                                                     enableSearch={true}
                                                     searchPlaceholder="Search countries..."
                                                 />
                                                 <hr
                                                     className={`mt-1 h-0.5 ${formik.errors.phoneNumber
-                                                            ? "bg-red-500"
-                                                            : "bg-foreground/30"
+                                                        ? "bg-red-500"
+                                                        : "bg-foreground/30"
                                                         }`}
                                                 />
                                                 {formik.touched.phoneNumber && formik.errors.phoneNumber && (
@@ -185,8 +207,8 @@ export default function page() {
                                                     onChange={formik.handleChange}
                                                     onBlur={formik.handleBlur}
                                                     className={`w-full bg-transparent  border-b-2 p-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-0 transition-colors ${formik.touched.companyName && formik.errors.companyName
-                                                            ? "border-red-500"
-                                                            : "border-foreground/30 focus:border-[var(--chart-3)]"
+                                                        ? "border-red-500"
+                                                        : "border-foreground/30 focus:border-[var(--chart-3)]"
                                                         }`}
                                                 />
                                                 {formik.touched.companyName && formik.errors.companyName && (
@@ -205,8 +227,8 @@ export default function page() {
                                                     onChange={formik.handleChange}
                                                     onBlur={formik.handleBlur}
                                                     className={`w-full bg-transparent border-b-2 md:mb-0 mb-6 p-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-0 transition-colors ${formik.touched.email && formik.errors.email
-                                                            ? "border-red-500"
-                                                            : "border-foreground/30 focus:border-[var(--chart-3)]"
+                                                        ? "border-red-500"
+                                                        : "border-foreground/30 focus:border-[var(--chart-3)]"
                                                         }`}
                                                 />
                                                 {formik.touched.email && formik.errors.email && (
@@ -215,7 +237,7 @@ export default function page() {
                                             </div>
                                         </div>
 
-                                        <div className="mb-8 md:mb-2">
+                                        <div className=" md:mb-2 ">
                                             <label className="block font-medium md:mb-2 mb-4 text-gray-300">Budget</label>
                                             <div className="relative w-full">
                                                 <button
@@ -226,13 +248,13 @@ export default function page() {
                                                     {formik.values.budget || "Select Budget"}
                                                 </button>
                                                 {open && (
-                                                    <div className="absolute mt-1 w-full bg-gray-900 border border-foreground/30 shadow-lg rounded-lg p-3 z-10">
+                                                    <div className="absolute mt-1 w-full bg-black border border-foreground/30 shadow-lg rounded-lg p-3 z-10">
                                                         <h3 className="font-semibold mb-2 text-gray-200">Budgets</h3>
                                                         <div className="space-y-3">
                                                             {options.map((option) => (
                                                                 <label
                                                                     key={option}
-                                                                    className="flex items-center gap-2 p-1 m-0 cursor-pointer text-gray-300 rounded-lg hover:bg-gray-800 transition-colors"
+                                                                    className="flex items-center gap-2 p-1 m-0 cursor-pointer text-gray-300 rounded-lg hover:bg-gray-900 transition-colors"
                                                                 >
                                                                     <input
                                                                         type="radio"
@@ -266,8 +288,8 @@ export default function page() {
                                                 onBlur={formik.handleBlur}
                                                 rows={1}
                                                 className={`w-full bg-transparent border-b-2 p-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-0 transition-colors ${formik.touched.message && formik.errors.message
-                                                        ? "border-red-500"
-                                                        : "border-foreground/30 focus:border-[var(--chart-3)]"
+                                                    ? "border-red-500"
+                                                    : "border-foreground/30 focus:border-[var(--chart-3)]"
                                                     }`}
                                             />
                                             {formik.touched.message && formik.errors.message && (
@@ -275,29 +297,33 @@ export default function page() {
                                             )}
                                         </div>
 
-                                        <div className="flex items-center">
+                                        <div className="flex items-center mt-6  ">
                                             <input
                                                 type="checkbox"
                                                 name="agree"
                                                 checked={formik.values.agree}
                                                 onChange={formik.handleChange}
-                                                className="mr-2 h-5 w-5 accent-[var(--chart-3)] cursor-pointer"
+                                                className="mr-2 h-4 w-4    cursor-pointer
+                                               accent-black
+                                                "
                                             />
                                             <label className="text-gray-300">I agree to receive SMS and WhatsApp</label>
                                         </div>
+                                        <div className='flex justify-center items-center'>
 
-                                        <button
-                                            type="submit"
-                                            disabled={loading}
-                                            className={cn(
-                                                "w-[100px] font-semibold py-2 my-4 rounded-lg transition-all duration-200",
-                                                loading
-                                                    ? "cursor-not-allowed opacity-50 bg-foreground/30 text-gray-400"
-                                                    : "cursor-pointer bg-[var(--chart-3)] text-white hover:bg-[#ff8820] hover:shadow-lg hover:shadow-[var(--chart-3)]/20"
-                                            )}
-                                        >
-                                            {loading ? "Submitting..." : "Submit"}
-                                        </button>
+                                            <button
+                                                type="submit"
+                                                disabled={loading}
+                                                className={cn(
+                                                    "w-[8vw] font-semibold py-2 my-4  transition-all rounded-2xl duration-200",
+                                                    loading
+                                                        ? "cursor-not-allowed opacity-50 bg-foreground/30 text-gray-400"
+                                                        : "cursor-pointer border-foreground/30 border-1 text-white  hover:shadow-lg hover:shadow-[var(--chart-3)]/20"
+                                                )}
+                                            >
+                                                {loading ? "Submitting..." : "Submit"}
+                                            </button>
+                                        </div>
                                     </form>
 
                                 </div>

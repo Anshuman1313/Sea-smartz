@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {ReactLenis} from "@/lib/lenis"
+import { ReactLenis } from "@/lib/lenis"
 import Footer from "./components/Layout/Footer";
-import { Navbar } from "./components/Layout/Navbar";
+import Navbar2 from "./components/Layout/Navbar2";
 import { Toaster } from "sonner";
+import LenisController from "./components/LenisController";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,22 +28,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark" >
+    <html lang="en" data-theme="dark">
       <ReactLenis root>
-  
-      <body
-      suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background `}
-      > 
-        <main className="min-h-screen text-muted-foreground flex flex-col   mx-auto ">
-        <Navbar/>
-
-        {children}
-        </main>
-        <Footer/>
-        <Toaster />
-      </body>
-        </ReactLenis>
+        <body
+          suppressHydrationWarning
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
+        >
+          <LenisController />
+          <main className="min-h-screen text-muted-foreground flex flex-col mx-auto">
+            <Navbar2 />
+            {children}
+          </main>
+          <Footer />
+          <Toaster />
+        </body>
+      </ReactLenis>
     </html>
   );
 }
