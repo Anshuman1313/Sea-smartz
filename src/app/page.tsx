@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0">
+      <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0 overflow-clip">
 
         <div className="min-h-screen text-4xl w-full  "
         >
