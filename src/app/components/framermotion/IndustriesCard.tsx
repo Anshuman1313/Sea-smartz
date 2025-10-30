@@ -74,7 +74,7 @@ const IndustriesCard = () => {
 
     const [hovered, setHovered] = useState<number | null>(null)
     return (
-        <div className='grid grid-cols-3   w-full '>
+        <div className='grid grid-cols-3 max-md:grid-cols-2 max-md:mx-auto  w-full '>
             {industries.map((Industry, index) => {
                 const Icon = Industry.icon as unknown as React.ComponentType<any>;
                 return (

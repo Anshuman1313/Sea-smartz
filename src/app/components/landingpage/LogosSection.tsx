@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion, scale } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, scale } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
@@ -53,9 +53,9 @@ export default function LogoSection() {
   }, []);
 
   return <>
-    <div className="flex flex-col justify-center items-center font-sans gap-5 mt-30">
-      <h1 className="text-6xl text-foreground font-semibold" ref={HeadingRef}>Trusted by Leading Brands</h1>
-      <h3 className="text-2xl " ref={SubHeadingRef}>Our partners and clients who rely on SeaSmartz for innovative IT solutions and digital growth.</h3>
+    <div className="flex flex-col text-center justify-center items-center font-sans gap-5 mt-30">
+      <h1 className="text-6xl  max-md:text-2xl text-foreground font-semibold" ref={HeadingRef}>Trusted by Leading Brands</h1>
+      <h3 className="text-2xl max-md:text-sm " ref={SubHeadingRef}>Our partners and clients who rely on SeaSmartz for innovative IT solutions and digital growth.</h3>
       <DynamicLogoGrid />
     </div>
   </>
@@ -83,7 +83,6 @@ export function DynamicLogoGrid({
   rectStroke?: string;
   logoSize?: number;
 }) {
-  // rectangles based on your original grid path
   const rectangles = [
     { x: 205, y: 205, width: 190, height: 190 },
     { x: 405, y: 205, width: 190, height: 190 },
@@ -92,11 +91,46 @@ export function DynamicLogoGrid({
     { x: 1005, y: 205, width: 190, height: 190 },
   ];
 
+  const allLogos = [
+    "logos/max.svg", 
+    "logos/leap.svg", 
+    "logos/resend.svg", 
+    "logos/strapi-full-logo-dark.svg", 
+    "logos/fal.svg",
+    "logos/sumo.svg",
+    "logos/upstash.svg",
+    "logos/anghami.svg",
+    "logos/durable.svg",
+  ];
+
+  const [currentLogos, setCurrentLogos] = useState<string[]>([]);
+
+  //  Helper function to get 5 unique random logos
+  const getUniqueRandomLogos = (count: number) => {
+    const shuffled = [...allLogos].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+  };
+
+  //  Initialize with 5 unique logos
+  useEffect(() => {
+    const initialLogos = getUniqueRandomLogos(rectangles.length);
+    setCurrentLogos(initialLogos);
+  }, []);
+
+  //  Change logos every 3 seconds (ensuring no duplicates)
+  useEffect(() => {
+    if (currentLogos.length === 0) return;
+
+    const interval = setInterval(() => {
+      const newUniqueLogos = getUniqueRandomLogos(rectangles.length);
+      setCurrentLogos(newUniqueLogos);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [currentLogos.length]);
+
   return (
-    <svg width={width} height={height} xmlns="http://www.w3.org/2000/svg"
-
-
-    >
+    <svg width={width} height={height} xmlns="http://www.w3.org/2000/svg" >
       {/* ===== Define Mask ===== */}
       <defs>
         <radialGradient id="fadeGradient" cx="50%" cy="50%" r="48%">
@@ -110,7 +144,8 @@ export function DynamicLogoGrid({
           <rect width={width} height={height} fill="url(#fadeGradient)" />
         </mask>
       </defs>
-      <g mask="url(#fadeMask)" >
+
+      <g mask="url(#fadeMask)">
         {/* Grid lines */}
         <path
           d="M50 200H1350 M50 400H1350 M200 50V550 M400 50V550 M600 50V550 M800 50V550 M1000 50V550 M1200 50V550"
@@ -133,7 +168,7 @@ export function DynamicLogoGrid({
 
         {/* Logos with Framer Motion hover effects */}
         {rectangles.map((rect, idx) => {
-          const logo = logos[idx % logos.length];
+          const logo = currentLogos[idx];
           const x = rect.x + rect.width / 2 - logoSize / 2;
           const y = rect.y + rect.height / 2 - logoSize / 2;
 
@@ -145,25 +180,38 @@ export function DynamicLogoGrid({
                 scale: 1.4,
                 stroke: "#ff7700"
               }}
-
             >
-             
-              <motion.rect
+              <rect
                 x={rect.x}
                 y={rect.y}
                 width={rect.width}
                 height={rect.height}
-                rx={10} // rounded corners
+                rx={10}
                 ry={10}
                 fill="transparent"
               />
-              {/* logo */}
-              <image href={logo} x={x} y={y} width={logoSize} height={logoSize} />
+
+              <AnimatePresence mode="wait">
+                {logo && (
+                  <motion.image
+                    key={logo}
+                    href={logo}
+                    x={x}
+                    y={y}
+                    width={logoSize}
+                    height={logoSize}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                )}
+              </AnimatePresence>
             </motion.g>
           );
         })}
-
       </g>
     </svg>
   );
 }
+

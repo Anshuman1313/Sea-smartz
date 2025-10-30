@@ -1,7 +1,5 @@
 "use client"
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useRef, useState, useEffect } from "react";
@@ -104,27 +102,20 @@ const Navbar2 = () => {
   const NavRef = useRef<HTMLDivElement>(null);
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(NavRef.current, {
-      scrollTrigger: {
-        trigger: document.body,
-        start: "top top",
-        end: "top+=100 top",
-        scrub: true,
-      },
-      height: "10vh",
-      backgroundColor: "rgba(23,23,23,0.8)",
-      backdropFilter: "blur(12px)",
-      ease: "power1.in",
-    })
-    return ()=>{
-      ScrollTrigger.killAll();
-    }
-  }, [pathname]);
+  // Scroll animation setup
+  const { scrollY } = useScroll();
+
+  // Transform scroll values to navbar properties
+  const navHeight = useTransform(scrollY, [0, 100], ["13vh", "10vh"]);
+  const navBgColor = useTransform(
+    scrollY,
+    [0, 100],
+    ["rgba(23,23,23,0)", "rgba(23,23,23,0.8)"]
+  );
+  const backdropBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(12px)"]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -147,25 +138,137 @@ const Navbar2 = () => {
   const handleDropdownClick = (label: string) => {
     setActiveDropdown((prev) => (prev === label ? null : label));
   };
-
+  const mobileDropdownClick = (lable:string) => {
+    setActiveDropdown
+  }
   return (
-    <div
+    <motion.div
       ref={NavRef}
-      className="sticky  font-sans top-0 z-40 h-[15vh] flex items-center justify-between px-8 transition-all duration-300 bg-transparent"
+      style={{
+        height: navHeight,
+        backgroundColor: navBgColor,
+        backdropFilter: backdropBlur,
+        WebkitBackdropFilter: backdropBlur,
+      }}
+      className="sticky font-sans top-0 z-40 flex items-center px-5  justify-between md:px-8 transition-all duration-300"
     >
       {/* Logo */}
       <div className="text-2xl font-bold text-white">
-       <Link href="/">
-          <span className=''>SEA</span><span className='text-chart-3 '>SMARTZ</span>
-          </Link>
+        <Link href="/">
+          <span className="">SEA</span>
+          <span className="text-chart-3">SMARTZ</span>
+        </Link>
       </div>
 
+      {/* Mobile navigation */}
+
+      <Hamburger isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
+      {
+        isOpen && (
+          <motion.ul
+            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            exit={{ opacity: [1, 0.5, 0], y: -20, transition: { duration: 0.2, ease: "easeOut" } }}
+
+            className="absolute top-full left-0 w-full bg-background text-muted-foreground flex flex-col space-y-2 px-5 py-6 md:hidden">
+            {MENU_DATA.map((item) => (
+              <div
+                key={item.label}
+                className="relative   group"
+                ref={(el) => {
+                  if (item.dropdown) {
+                    dropdownRefs.current[item.label] = el;
+                  }
+                }}
+              >
+                {item.dropdown ? (
+                  <>
+                    <button
+                      onClick={() => handleDropdownClick(item.label)}
+                      className="flex items-center w-full justify-between gap-2 hover:text-gray-300 transition-colors"
+                    >
+                      {item.label}
+                      <motion.svg
+                        animate={{ rotate: activeDropdown === item.label ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </motion.svg>
+                    </button>
+
+                    <AnimatePresence>
+                      {activeDropdown === item.label && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                          className="relative  "
+                        >
+                          {item.dropdown.map((category, idx) => (
+                            <div
+                              key={category.category}
+                              className={idx > 0 ? "border-t border-foreground/20" : ""}
+                            >
+                              {/* Category Header */}
+                              <div className="px-4 pt-4 pb-2">
+                                <h3 className="text-sm font-bold uppercase tracking-wider">
+                                  {category.category}
+                                </h3>
+                              </div>
+                              {/* Category Items */}
+                              <div className="pb-2">
+                                {category.items.map((subItem) => (
+                                  <Link
+                                    key={subItem.label}
+                                    href={subItem.href}
+                                    className="block px-4 py-3 hover:bg-foreground/30 transition-colors group/item"
+                                  >
+                                    <div className="font-semibold text-white group-hover/item:text-chart-3 transition-colors">
+                                      {subItem.label}
+                                    </div>
+                                    <div className="text-sm text-gray-400 mt-0.5">
+                                      {subItem.description}
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
+                ) : (
+                  <Link href={item.href || "#"} className="hover:text-gray-300 transition-colors">
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+            <div className='h-px bg-muted-foreground inset-x-0 mt-2 mb-2'></div>
+          </motion.ul>
+        )
+      }
+
+
+
       {/* Navigation Menu */}
-      <nav className="flex items-center gap-8 text-white">
+      <nav className="hidden md:flex items-center  gap-8 text-white">
         {MENU_DATA.map((item) => (
           <div
             key={item.label}
-            className="relative group"
+            className="relative   group"
             ref={(el) => {
               if (item.dropdown) {
                 dropdownRefs.current[item.label] = el;
@@ -179,10 +282,10 @@ const Navbar2 = () => {
                   className="flex items-center gap-2 hover:text-gray-300 transition-colors"
                 >
                   {item.label}
-                  <svg
-                    className={`w-4 h-4 transition-transform duration-300 ${
-                      activeDropdown === item.label ? "rotate-180" : "rotate-0"
-                    }`}
+                  <motion.svg
+                    animate={{ rotate: activeDropdown === item.label ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -193,39 +296,51 @@ const Navbar2 = () => {
                       strokeWidth={2}
                       d="M19 9l-7 7-7-7"
                     />
-                  </svg>
+                  </motion.svg>
                 </button>
-                {activeDropdown === item.label && (
-                  <div className="absolute  top-full left-0 mt-2 min-w-[280px] bg-black  border border-foreground/30 backdrop-blur-3xl rounded-[10px] shadow-xl overflow-hidden">
-                    {item.dropdown.map((category, idx) => (
-                      <div key={category.category} className={idx > 0 ? "border-t border-foreground/20" : ""}>
-                        {/* Category Header */}
-                        <div className="px-4 pt-4 pb-2">
-                          <h3 className="text-sm font-bold  uppercase tracking-wider">
-                            {category.category}
-                          </h3>
+
+                <AnimatePresence>
+                  {activeDropdown === item.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 min-w-[280px] bg-black border border-foreground/30 backdrop-blur-3xl rounded-[10px] shadow-xl overflow-hidden"
+                    >
+                      {item.dropdown.map((category, idx) => (
+                        <div
+                          key={category.category}
+                          className={idx > 0 ? "border-t border-foreground/20" : ""}
+                        >
+                          {/* Category Header */}
+                          <div className="px-4 pt-4 pb-2">
+                            <h3 className="text-sm font-bold uppercase tracking-wider">
+                              {category.category}
+                            </h3>
+                          </div>
+                          {/* Category Items */}
+                          <div className="pb-2">
+                            {category.items.map((subItem) => (
+                              <Link
+                                key={subItem.label}
+                                href={subItem.href}
+                                className="block px-4 py-3 hover:bg-foreground/30 transition-colors group/item"
+                              >
+                                <div className="font-semibold text-white group-hover/item:text-chart-3 transition-colors">
+                                  {subItem.label}
+                                </div>
+                                <div className="text-sm text-gray-400 mt-0.5">
+                                  {subItem.description}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                        {/* Category Items */}
-                        <div className="pb-2">
-                          {category.items.map((subItem) => (
-                            <Link
-                              key={subItem.label}
-                              href={subItem.href}
-                              className="block px-4 py-3 hover:bg-foreground/30 transition-colors group/item"
-                            >
-                              <div className="font-semibold text-white group-hover/item:text-chart-3 transition-colors">
-                                {subItem.label}
-                              </div>
-                              <div className="text-sm text-gray-400 mt-0.5">
-                                {subItem.description}
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </>
             ) : (
               <Link href={item.href || "#"} className="hover:text-gray-300 transition-colors">
@@ -236,15 +351,50 @@ const Navbar2 = () => {
         ))}
       </nav>
 
+
+
+
+
       {/* Contact Us Button */}
       <Link
         href="/contact"
-        className="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-200 transition-colors"
+        className="px-6 max-md:hidden py-2 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-200 transition-colors"
       >
         Contact Us
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
 export default Navbar2;
+
+interface HamburgerProps {
+  isOpen: boolean;
+  toggle: () => void;
+}
+const Hamburger = ({ isOpen, toggle }: HamburgerProps) => (
+  <button
+    className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+    onClick={toggle}
+    aria-label="Toggle menu"
+  >
+    <motion.span
+      className="bg-muted-foreground w-8 h-0.5 rounded my-1"
+      initial={false}
+      animate={isOpen ? { rotate: 45, y: 12 } : { rotate: 0, y: 0 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+    />
+    <motion.span
+      className="bg-muted-foreground w-8 h-0.5 rounded my-1"
+      initial={false}
+      animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    />
+    <motion.span
+      className="bg-muted-foreground w-8 h-0.5 rounded my-1"
+      initial={false}
+      animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+    />
+  </button>
+);

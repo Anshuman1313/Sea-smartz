@@ -86,7 +86,7 @@ export default function AnimatedPathway({
                     scrollTrigger: {
                         trigger: [pathFullRef.current, pathHighlightRef.current],
                         start: "-281 50%", //object start and then the scroller start where 80% of viewport
-                        end: "-281 25%",
+                        end: "-281 30%",
                         toggleActions: "play none none none",
                         // markers: true,
                         scrub: true,
@@ -198,7 +198,7 @@ export default function AnimatedPathway({
                            
                             
                            start: "140 50%",
-                           end: "140 25% ",
+                           end: "140 35% ",
                             scrub: 1,
                             // markers: true,
                         },

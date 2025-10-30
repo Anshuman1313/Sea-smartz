@@ -71,7 +71,7 @@ const GrowthCurve = () => {
     }, [])
 
     return (
-        <div className='max-w-5xl my-40 relative font-sans'>
+        <div className='max-w-5xl my-20 relative font-sans'>
             <div className='flex w-full absolute gap-15 '>
                 {/* The sub heading */}
                 <div className='flex flex-col gap-3 '

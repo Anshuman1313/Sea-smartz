@@ -5,6 +5,7 @@ import IndustriesCard from '../framermotion/IndustriesCard'
 import { useGSAP } from '@gsap/react'
 import { SplitText } from 'gsap/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import GradientText from '../framermotion/GradientText';
 
 
 const Indutries = () => {
@@ -53,9 +54,18 @@ const Indutries = () => {
     })
 
   return (
-    <div className='flex flex-col justify-center items-center w-full space-y-4  mt-40 mb-20 font-sans text-foreground'>
-      <h1 className='text-5xl font-semibold text-foreground ' ref={HeadingRef}>Empowering Digital Transformation Across Industries</h1>
-      <h3 className='text-base  w-2/3 text-foreground/60' ref={SubHeadingRef}>We help businesses across diverse sectors harness the power of technology to innovate, scale, and stay future-ready. Our IT solutions are designed to streamline operations, enhance customer experiences, and drive measurable business outcomes.</h3>
+    <div className='flex flex-col justify-center items-center w-full space-y-4  mt-20 mb-20 font-sans text-foreground'>
+<GradientText className='text-base max-md:text-sm' leftColor='#fb923c' midColor='white' rightColor='#fb923c'>
+  Scaling innovation, accelerating results.
+</GradientText>
+
+<h1 className='text-5xl font-semibold text-foreground text-center' ref={HeadingRef}>
+  Transforming Businesses with <span className='text-chart-3'>Technology</span> 
+</h1>
+
+<h3 className='text-base w-2/3 text-center text-foreground/60' ref={SubHeadingRef}>
+  Empowering industries to innovate, scale, and deliver better experiences through smart IT solutions.
+</h3>
      <div className='max-w-4xl mt-5'>
 
         <IndustriesCard/>
