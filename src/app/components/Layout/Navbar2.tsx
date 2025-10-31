@@ -1,8 +1,8 @@
 "use client"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useRef, useState, useEffect } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 
 interface SubItem {
   label: string;
@@ -21,7 +21,7 @@ interface MenuItem {
   dropdown?: DropdownCategory[];
 }
 
-const MENU_DATA: MenuItem[] = [
+export const MENU_DATA: MenuItem[] = [
   {
     label: "Technologies",
     dropdown: [
@@ -136,11 +136,10 @@ const Navbar2 = () => {
   }, [activeDropdown]);
 
   const handleDropdownClick = (label: string) => {
+    console.log(label, activeDropdown)
     setActiveDropdown((prev) => (prev === label ? null : label));
   };
-  const mobileDropdownClick = (lable:string) => {
-    setActiveDropdown
-  }
+
   return (
     <motion.div
       ref={NavRef}
@@ -150,7 +149,7 @@ const Navbar2 = () => {
         backdropFilter: backdropBlur,
         WebkitBackdropFilter: backdropBlur,
       }}
-      className="sticky font-sans top-0 z-40 flex items-center px-5  justify-between md:px-8 transition-all duration-300"
+      className="sticky font-sans top-0 z-40 hidden md:flex items-center px-5  justify-between md:px-8 transition-all duration-300"
     >
       {/* Logo */}
       <div className="text-2xl font-bold text-white">
@@ -160,106 +159,9 @@ const Navbar2 = () => {
         </Link>
       </div>
 
-      {/* Mobile navigation */}
+ 
 
-      <Hamburger isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
-      {
-        isOpen && (
-          <motion.ul
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            exit={{ opacity: [1, 0.5, 0], y: -20, transition: { duration: 0.2, ease: "easeOut" } }}
-
-            className="absolute top-full left-0 w-full bg-background text-muted-foreground flex flex-col space-y-2 px-5 py-6 md:hidden">
-            {MENU_DATA.map((item) => (
-              <div
-                key={item.label}
-                className="relative   group"
-                ref={(el) => {
-                  if (item.dropdown) {
-                    dropdownRefs.current[item.label] = el;
-                  }
-                }}
-              >
-                {item.dropdown ? (
-                  <>
-                    <button
-                      onClick={() => handleDropdownClick(item.label)}
-                      className="flex items-center w-full justify-between gap-2 hover:text-gray-300 transition-colors"
-                    >
-                      {item.label}
-                      <motion.svg
-                        animate={{ rotate: activeDropdown === item.label ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </motion.svg>
-                    </button>
-
-                    <AnimatePresence>
-                      {activeDropdown === item.label && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
-                          className="relative  "
-                        >
-                          {item.dropdown.map((category, idx) => (
-                            <div
-                              key={category.category}
-                              className={idx > 0 ? "border-t border-foreground/20" : ""}
-                            >
-                              {/* Category Header */}
-                              <div className="px-4 pt-4 pb-2">
-                                <h3 className="text-sm font-bold uppercase tracking-wider">
-                                  {category.category}
-                                </h3>
-                              </div>
-                              {/* Category Items */}
-                              <div className="pb-2">
-                                {category.items.map((subItem) => (
-                                  <Link
-                                    key={subItem.label}
-                                    href={subItem.href}
-                                    className="block px-4 py-3 hover:bg-foreground/30 transition-colors group/item"
-                                  >
-                                    <div className="font-semibold text-white group-hover/item:text-chart-3 transition-colors">
-                                      {subItem.label}
-                                    </div>
-                                    <div className="text-sm text-gray-400 mt-0.5">
-                                      {subItem.description}
-                                    </div>
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </>
-                ) : (
-                  <Link href={item.href || "#"} className="hover:text-gray-300 transition-colors">
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
-            <div className='h-px bg-muted-foreground inset-x-0 mt-2 mb-2'></div>
-          </motion.ul>
-        )
-      }
+     
 
 
 
@@ -314,8 +216,8 @@ const Navbar2 = () => {
                           className={idx > 0 ? "border-t border-foreground/20" : ""}
                         >
                           {/* Category Header */}
-                          <div className="px-4 pt-4 pb-2">
-                            <h3 className="text-sm font-bold uppercase tracking-wider">
+                          <div className="px-4 pt-4 pb-2 hidden">
+                            <h3 className="text-sm font-bold uppercase tracking-wider ">
                               {category.category}
                             </h3>
                           </div>
@@ -368,33 +270,3 @@ const Navbar2 = () => {
 
 export default Navbar2;
 
-interface HamburgerProps {
-  isOpen: boolean;
-  toggle: () => void;
-}
-const Hamburger = ({ isOpen, toggle }: HamburgerProps) => (
-  <button
-    className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
-    onClick={toggle}
-    aria-label="Toggle menu"
-  >
-    <motion.span
-      className="bg-muted-foreground w-8 h-0.5 rounded my-1"
-      initial={false}
-      animate={isOpen ? { rotate: 45, y: 12 } : { rotate: 0, y: 0 }}
-      transition={{ type: "spring", stiffness: 260, damping: 20 }}
-    />
-    <motion.span
-      className="bg-muted-foreground w-8 h-0.5 rounded my-1"
-      initial={false}
-      animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-      transition={{ duration: 0.2 }}
-    />
-    <motion.span
-      className="bg-muted-foreground w-8 h-0.5 rounded my-1"
-      initial={false}
-      animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-      transition={{ type: "spring", stiffness: 260, damping: 20 }}
-    />
-  </button>
-);

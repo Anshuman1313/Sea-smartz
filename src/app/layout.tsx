@@ -8,6 +8,7 @@ import { Toaster } from "sonner";
 import LenisController from "./components/LenisController";
 import MobileNav from "./components/Layout/MobileNav";
 import { Navbar } from "./components/Layout/Navbar";
+import { Banner } from "./components/landingpage/Banner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,8 +39,10 @@ export default function RootLayout({
         >
           <LenisController />
           <main className="min-h-screen text-muted-foreground flex flex-col mx-auto">
-            {/* <MobileNav/> */}
+            <Banner/>
+            <MobileNav/>
             <Navbar2 />
+            
             {/* <Navbar/> */}
             {children}
           </main>
