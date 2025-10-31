@@ -5,13 +5,11 @@ import { div } from 'motion/react-client';
 export default function Footer() {
   return (
     
-    <div className='bg-chart-3 '>
-      <div className='sm:hidden'>
-     <Content/>
-      </div>
-      <div className='max-sm:hidden'>
+    <div className='bg-chart-3 max-md:hidden'>
+     
+     
       <DesktopFooter />
-      </div>
+      
 
     </div>
 
