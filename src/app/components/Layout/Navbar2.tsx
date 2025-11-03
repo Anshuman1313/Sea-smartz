@@ -208,12 +208,12 @@ const Navbar2 = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 min-w-[280px] bg-black border border-foreground/30 backdrop-blur-3xl rounded-[10px] shadow-xl overflow-hidden"
+                      className="absolute top-full left-0 mt-2 min-w-[280px] bg-background border border-foreground/30 backdrop-blur-3xl rounded-[10px] shadow-xl overflow-hidden"
                     >
                       {item.dropdown.map((category, idx) => (
                         <div
                           key={category.category}
-                          className={idx > 0 ? "border-t border-foreground/20" : ""}
+                          className={idx > 0 ? "border-t  border-foreground/20" : ""}
                         >
                           {/* Category Header */}
                           <div className="px-4 pt-4 pb-2 hidden">
@@ -222,12 +222,13 @@ const Navbar2 = () => {
                             </h3>
                           </div>
                           {/* Category Items */}
-                          <div className="pb-2">
+                          <div className="">
                             {category.items.map((subItem) => (
                               <Link
                                 key={subItem.label}
                                 href={subItem.href}
                                 className="block px-4 py-3 hover:bg-foreground/30 transition-colors group/item"
+                                onClick={()=>setActiveDropdown(null)}
                               >
                                 <div className="font-semibold text-white group-hover/item:text-chart-3 transition-colors">
                                   {subItem.label}

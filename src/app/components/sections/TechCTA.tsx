@@ -78,7 +78,7 @@ export default function TechCTA({ data }: TechCTAProps) {
             {/* Secondary CTA */}
             {data.secondaryCTA && (
               <Link
-                href={data.secondaryCTA.href}
+                href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-foreground/20 hover:border-[var(--chart-3)]/50 text-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105"
               >
                 {data.secondaryCTA.text}

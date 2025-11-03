@@ -90,7 +90,7 @@ export default function ServicePackages({ data }: ServicePackagesProps) {
 
               {/* Pricing */}
               {pkg.pricing && (
-                <div className="mb-6 pb-6 border-b border-border">
+                <div className="mb-6 pb-6 border-b border-border hidden">
                   <span className="text-2xl md:text-3xl font-bold text-[var(--chart-3)]">
                     {pkg.pricing}
                   </span>

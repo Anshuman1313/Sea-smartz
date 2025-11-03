@@ -9,6 +9,8 @@ import LenisController from "./components/LenisController";
 import MobileNav from "./components/Layout/MobileNav";
 import { Navbar } from "./components/Layout/Navbar";
 import { Banner } from "./components/landingpage/Banner";
+import MobileFooter from "./components/Layout/MobileFooter";
+import CookieConsent from "./components/Layout/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +48,7 @@ export default function RootLayout({
             {/* <Navbar/> */}
             {children}
           </main>
+         <CookieConsent/>
           <Footer />
           <Toaster />
         </body>

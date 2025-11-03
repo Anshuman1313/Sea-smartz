@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import { Particles } from '@/components/ui/particles'
 import { Meteors } from '@/components/ui/meteors'
 import { motion } from "framer-motion";
+import Link from 'next/link'
 
 const HeroSection = () => {
   return (

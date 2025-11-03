@@ -32,7 +32,7 @@ export default function Home() {
           <Indutries />
         </div>
 
-        <div className="min-h-screen  w-full flex justify-center items-center ">
+        <div className="min-h-screen max-md:hidden  w-full flex justify-center items-center ">
           <GrowthCurve />
 
         </div>
