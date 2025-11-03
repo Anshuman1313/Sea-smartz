@@ -29,7 +29,7 @@ const cardVariants:Variants = {
 
 export default function TechUseCases({ data }: TechUseCasesProps) {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-background py-16 md:py-24 hidden">
       <div className="max-w-5xl mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div

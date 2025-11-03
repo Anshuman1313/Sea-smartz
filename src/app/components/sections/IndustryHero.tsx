@@ -2,22 +2,21 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ServiceHeroData } from '@/lib/types';
+import { IndustryHeroData } from '@/lib/types';
 import { ArrowRight } from 'lucide-react';
 import GradientText from '../framermotion/GradientText';
 
-interface ServiceHeroProps {
-  data: ServiceHeroData;
+interface IndustryHeroProps {
+  data: IndustryHeroData;
 }
 
-// Background style components
 const BackgroundStyles = {
   gradient: (
     <div className="absolute inset-0 bg-gradient-to-br from-[var(--chart-3)]/10 via-transparent to-[var(--chart-3)]/5" />
   ),
   dots: (
     <div 
-      className="absolute inset-0 opacity-60"
+      className="absolute inset-0 opacity-50"
       style={{
         backgroundImage: 'radial-gradient(circle, var(--chart-3) 1px, transparent 1px)',
         backgroundSize: '30px 30px'
@@ -26,7 +25,7 @@ const BackgroundStyles = {
   ),
   grid: (
     <div 
-      className="absolute inset-0 opacity-40"
+      className="absolute inset-0 opacity-50"
       style={{
         backgroundImage: 'linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)',
         backgroundSize: '50px 50px'
@@ -39,7 +38,7 @@ const BackgroundStyles = {
     </div>
   ),
   mesh: (
-    <div className="absolute inset-0 opacity-60">
+    <div className="absolute inset-0 opacity-50">
       <svg width="100%" height="100%">
         <defs>
           <pattern id="mesh" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -52,70 +51,54 @@ const BackgroundStyles = {
   ),
 };
 
-export default function ServiceHero({ data }: ServiceHeroProps) {
+export default function IndustryHero({ data }: IndustryHeroProps) {
   const backgroundType = data.backgroundType || 'gradient';
   
   return (
-    <section className="relative bg-background py-20 md:py-28 overflow-hidden">
-      {/* Dynamic Background */}
+    <section className="relative bg-background py-16 md:py-22 overflow-hidden">
       {BackgroundStyles[backgroundType]}
       
       <div className="relative max-w-5xl mx-auto px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center space-y-6"
+          transition={{ duration: 0.5 }}
+          className="text-center space-y-5"
         >
-          {/* Title */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
             {data.title}
           </h1>
 
-          {/* Tagline */}
-          <GradientText className='text-3xl py-2 md:text-4xl md:font-semibold' leftColor='#fb923c' midColor='white' rightColor='#fb923c'>
+         <GradientText className='text-3xl md:text-4xl py-2 md:font-semibold' leftColor='#fb923c' midColor='white' rightColor='#fb923c'>
 
        
             {data.tagline}
         </GradientText>
 
-          {/* Description */}
           <p className="text-base md:text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             {data.description}
           </p>
 
-          {/* Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-wrap justify-center gap-2 md:gap-3"
-          >
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {data.badges.map((badge, index) => (
               <span
                 key={index}
-                className="px-4 py-2 rounded-full bg-[var(--chart-3)]/10 border border-[var(--chart-3)]/30 text-[var(--chart-3)] text-sm md:text-base font-medium"
+                className="px-3 py-1.5 rounded-full bg-[var(--chart-3)]/10 border border-[var(--chart-3)]/30 text-[var(--chart-3)] text-sm font-medium"
               >
                 {badge}
               </span>
             ))}
-          </motion.div>
+          </div>
 
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="pt-2"
-          >
+          <div className="pt-2">
             <Link
               href={data.ctaHref}
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--chart-3)] hover:bg-[var(--chart-3)]/90 text-background font-semibold rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg shadow-[var(--chart-3)]/20"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--chart-3)] hover:bg-[var(--chart-3)]/90 text-background font-semibold rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg shadow-[var(--chart-3)]/20"
             >
               {data.ctaText}
               <ArrowRight className="w-5 h-5" />
             </Link>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

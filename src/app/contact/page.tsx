@@ -7,11 +7,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
-import Frame from '../components/paper/BackgroundContact';
-import AnimatedGradientText from '../components/paper/BackgroundContact';
-import { VideoText } from '@/components/ui/video-text';
-import Image from 'next/image';
-import {motion} from "motion/react"
+import { motion } from "motion/react"
 import { Particles } from '@/components/ui/particles';
 import GradientText from '../components/framermotion/GradientText';
 
@@ -63,7 +59,9 @@ export default function page() {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        access_key: 'akljfsdkja',
+                        access_key: '6798b9ae-9172-4ddd-b239-e872aba7050a',
+                        subject: 'Contact Form Submission ',
+                        from_name: 'SEASMARTZ',
                         ...values
                     })
                 });
@@ -105,42 +103,42 @@ export default function page() {
     const [loading, setLoading] = useState(false);
     return (
         <>
-        {/* <div className='absolute h-full w-full'> <Frame/></div> */}
-             <Particles className='max-md:hidden absolute top-0 h-full w-full'/>
+            {/* <div className='absolute h-full w-full'> <Frame/></div> */}
+            <Particles className='max-md:hidden absolute top-0 h-full w-full' />
             <div className=' mb-20 bg-background w-full flex justify-center items-center'>
 
 
                 <motion.div className=' max-w-5xl flex bg-background'
-    //                 style={{
-    //                     backgroundImage: "url('/cbg1.svg')",
-    //                     backgroundSize: "cover",      // or 'contain'
-    //                     backgroundPosition: "center",
-    //                     backgroundRepeat: "no-repeat",
-    //                     width: "100%",
-    //                     height: "100%",
+                //                 style={{
+                //                     backgroundImage: "url('/cbg1.svg')",
+                //                     backgroundSize: "cover",      // or 'contain'
+                //                     backgroundPosition: "center",
+                //                     backgroundRepeat: "no-repeat",
+                //                     width: "100%",
+                //                     height: "100%",
 
-    //                 }}
-    //                 initial={{ scale: 0.9, opacity: 0 }}
-    //   animate={{ scale: 1, opacity: 1 }}
-    //   transition={{ duration: 1, ease: "easeOut" }}
-                    >
+                //                 }}
+                //                 initial={{ scale: 0.9, opacity: 0 }}
+                //   animate={{ scale: 1, opacity: 1 }}
+                //   transition={{ duration: 1, ease: "easeOut" }}
+                >
                     <div className='h-full  flex justify-center  font-sans   w-full  max-md:hidden'
 
                     >
                         <GradientText leftColor='#ff7700' midColor='white' rightColor='#ff7700'>
 
-                        <div className="space-y-3  my-40">
-                            <h1 className="text-5xl  md:text-7xl font-bold leading-tight font-sans tracking-tight">
-                                <span className="block text-foreground">Got a Vision?</span>
-                                <span className="block ">We’ll Code It.</span>
-                            </h1>
+                            <div className="space-y-3  my-40">
+                                <h1 className="text-5xl  md:text-7xl font-bold leading-tight font-sans tracking-tight">
+                                    <span className="block text-foreground">Got a Vision?</span>
+                                    <span className="block ">We’ll Code It.</span>
+                                </h1>
 
-                            {/* <p className="text-lg md:text-xl text-gray-200 max-w-md leading-relaxed">
+                                {/* <p className="text-lg md:text-xl text-gray-200 max-w-md leading-relaxed">
                                 Tell us what you’re dreaming of — our experts will turn it into a powerful
                                 digital experience. Fill out the form and we’ll connect soon.
                                 </p> */}
-                        </div>
-                                </GradientText>
+                            </div>
+                        </GradientText>
                     </div>
                     <div className='h-full bg-background  w-full overflow-y-auto  custom-scrollbar '>
                         <div>
@@ -344,7 +342,7 @@ export default function page() {
                         </div>
 
                     </div>
-                 </motion.div>                        
+                </motion.div>
             </div>
         </>
     )

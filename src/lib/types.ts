@@ -195,3 +195,231 @@ export interface ServicesData {
   devops: ServicePageData;
   consulting: ServicePageData;
 }
+
+
+// DIY Team Hero Section
+export interface TeamHeroData {
+  title: string;
+  tagline: string;
+  description: string;
+  ctaText: string;
+  ctaHref: string;
+  backgroundType?: 'gradient' | 'dots' | 'grid' | 'radial' | 'mesh';
+}
+
+// Team Card
+export interface TeamCard {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  skills: string[];
+  href: string;
+}
+
+// Teams Grid Section
+export interface TeamsGridData {
+  heading: string;
+  subheading?: string;
+  teams: TeamCard[];
+}
+
+// Team CTA Section
+export interface TeamCTAData {
+  heading: string;
+  subheading: string;
+  primaryCTA: {
+    text: string;
+    href: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    href: string;
+  };
+}
+
+// Complete Team Page Data (3 sections)
+export interface TeamPageData {
+  slug: string;
+  hero: TeamHeroData;
+  teams: TeamsGridData;
+  cta: TeamCTAData;
+}
+
+// All DIY Teams Data
+export interface DIYTeamsData {
+  frontend: TeamPageData;
+  backend: TeamPageData;
+  fullstack: TeamPageData;
+  mobile: TeamPageData;
+}
+// Industry Hero Section
+export interface IndustryHeroData {
+  title: string;
+  tagline: string;
+  description: string;
+  badges: string[];
+  ctaText: string;
+  ctaHref: string;
+  backgroundType?: 'gradient' | 'dots' | 'grid' | 'radial' | 'mesh';
+}
+
+// Industry Challenge Card
+export interface ChallengeCard {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
+
+// Challenges Section
+export interface IndustryChallengesData {
+  heading: string;
+  subheading?: string;
+  challenges: ChallengeCard[];
+}
+
+// Industry Solution Card
+export interface SolutionCard {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+// Solutions Section
+export interface IndustrySolutionsData {
+  heading: string;
+  subheading?: string;
+  solutions: SolutionCard[];
+}
+
+// Case Study
+export interface CaseStudy {
+  client: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+}
+
+// Case Studies Section
+export interface IndustryCaseStudiesData {
+  heading: string;
+  subheading?: string;
+  caseStudy: CaseStudy;
+}
+
+// Industry CTA
+export interface IndustryCTAData {
+  heading: string;
+  subheading: string;
+  primaryCTA: {
+    text: string;
+    href: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    href: string;
+  };
+  stats?: { label: string; value: string }[];
+}
+
+// Complete Industry Page Data (5 sections)
+export interface IndustryPageData {
+  slug: string;
+  hero: IndustryHeroData;
+  challenges: IndustryChallengesData;
+  solutions: IndustrySolutionsData;
+  caseStudy: IndustryCaseStudiesData;
+  cta: IndustryCTAData;
+}
+
+// All Industries Data
+export interface IndustriesData {
+  healthcare: IndustryPageData;
+  finance: IndustryPageData;
+  ecommerce: IndustryPageData;
+  education: IndustryPageData;
+}
+// About Hero Section
+export interface AboutHeroData {
+  title: string;
+  tagline: string;
+  description: string;
+  stats: { label: string; value: string }[];
+  backgroundType?: 'gradient' | 'dots' | 'grid' | 'radial' | 'mesh';
+}
+
+// About Story Section
+export interface AboutStoryData {
+  heading: string;
+  subheading?: string;
+  story: string[];
+  image?: string;
+}
+
+// Value Card
+export interface ValueCard {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
+
+// Values Section
+export interface AboutValuesData {
+  heading: string;
+  subheading?: string;
+  values: ValueCard[];
+}
+
+// Team Member
+export interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+  image?: string;
+}
+
+// Team Section
+export interface AboutTeamData {
+  heading: string;
+  subheading?: string;
+  description?: string;
+  teamSize: string;
+}
+
+// Achievement
+export interface Achievement {
+  year: string;
+  title: string;
+  description: string;
+}
+
+// Journey Section
+export interface AboutJourneyData {
+  heading: string;
+  subheading?: string;
+  achievements: Achievement[];
+}
+
+// About CTA
+export interface AboutCTAData {
+  heading: string;
+  subheading: string;
+  primaryCTA: {
+    text: string;
+    href: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    href: string;
+  };
+}
+
+// Complete About Page Data
+export interface AboutPageData {
+  hero: AboutHeroData;
+  story: AboutStoryData;
+  values: AboutValuesData;
+  team: AboutTeamData;
+  journey: AboutJourneyData;
+  cta: AboutCTAData;
+}
