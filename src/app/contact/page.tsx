@@ -10,6 +10,12 @@ import { toast } from 'sonner';
 import { motion } from "motion/react"
 import { Particles } from '@/components/ui/particles';
 import GradientText from '../components/framermotion/GradientText';
+import { Metadata } from 'next';
+
+ const metadata: Metadata = {
+  title: 'About Us | Sea Smartz',
+  description: 'Learn about Sea Smartz - your trusted partner in digital transformation. 10+ years of innovation, 500+ projects delivered.',
+};
 
 const options = [
     "Less than 5k USD",

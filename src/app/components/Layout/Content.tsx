@@ -109,7 +109,7 @@ const Nav = () => (
         <h3 className="mb-1 font-sem md:font-bold text-foreground uppercase lg:text-xl tracking-wide">{section.title}</h3>
         {section.links.map(link => (
           <Link key={link.href} href={link.href} 
-            className="lg:text-lg text-[1rem] font-light text-foreground/80 hover:text-accent hover:underline transition-colors">
+            className=" text-[1rem] font-light text-foreground/80 hover:text-accent hover:underline transition-colors">
             {link.label}
           </Link>
         ))}
