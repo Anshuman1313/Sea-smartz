@@ -300,6 +300,26 @@ export const Particles: React.FC<ParticlesProps> = ({
     })
     rafID.current = window.requestAnimationFrame(animate)
   }
+     const [input, setInput] = useState("");
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+ 
+    const code = "ROCKETMAN";
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const newInput = (input + e.key).slice(-code.length);
+      setInput(newInput);
+
+      if (newInput.toUpperCase() === code) {
+        setOpen(true);
+        setInput("");
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [ input]);
 
   return (
     <div
@@ -308,6 +328,39 @@ export const Particles: React.FC<ParticlesProps> = ({
       aria-hidden="true"
       {...props}
     >
+      
+      
+      {open && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center text-green-400 font-mono text-lg z-50 pointer-events-auto">
+          <div className="relative p-6  rounded-lg border border-green-500 animate-pulse">
+            {/* Close button */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-2 right-2 text-green-400 hover:text-white"
+            >
+              ✕
+            </button>
+
+            <p> Cheat Activated: ROCKETMAN 🚀</p>
+            <p> Jetpack deployed...</p>
+            <p> Built by Anshuman 🛠️</p>
+          
+            <p className="">Hey if you found this Congrats!!! DM me on Twitter-  
+              
+               <a
+               className="underline"
+                href="https://x.com/Anshuman1_3"
+              
+                target="_blank"
+                rel="noopener noreferrer"
+             
+              >
+                Anshuman1_3
+              </a> </p>
+              <p>if you want to see some more COOL STUFF ig :{")"}</p>
+          </div>
+        </div>
+      )}
       <canvas ref={canvasRef} className="size-full" />
     </div>
   )
