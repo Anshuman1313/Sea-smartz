@@ -33,7 +33,7 @@ const MobileNav = () => {
   const navBgColor = useTransform(
     scrollY,
     [0, 100],
-    ["rgba(23,23,23,0)", "oklch(0% 0 0)"]
+    ["rgba(23,23,23,0)", "#000000"]
   );
 
  const navHeight = useTransform(scrollY, [0, 100], ["13vh", "10vh"]);

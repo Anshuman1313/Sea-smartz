@@ -68,20 +68,27 @@ style={{
       <p className="text-lg md:text-xl text-center text-neutral-300 mb-8 max-w-2xl">
         Sea Smartz delivers world-class IT services, seamlessly blending expert knowledge and AI to boost productivity, efficiency, and global reach for your enterprise.
       </p>
-      <div className="flex flex-col justify-center items-center sm:flex-row gap-4 mb-6">
-        <Button className="px-4 py-5 text-lg  font-semibold rounded-[10px] shadow" variant="default">
-          Start your journey <span 
+      <div className="flex flex-col  justify-center items-center sm:flex-row gap-4 mb-6">
+        
+        <Button className="px-4 py-5 text-lg z-40   font-semibold rounded-[10px] shadow" variant="default">
+          <Link href='/contact' className='flex items-center gap-2'>
+          
+          Start your journey 
+          <span  
          
           ><ArrowRight className=''/></span>
+          </Link>
         </Button>
-        <Button className=" max-sm:w-30 px-4 py-5 bg-muted-foreground/20 text-primary text-lg font-semibold rounded-[10px]  " variant="outline">
+        <Button className=" max-sm:w-30 z-40 px-4 py-5 bg-muted-foreground/20 text-primary text-lg font-semibold rounded-[10px]  " variant="outline">
+         <Link href="/contact"> 
+         
          Learn More
+         </Link>
         </Button>
       </div>
-      <div className="flex items-center gap-2 mt-8 max-sm:hidden">
+      <div className=" items-center  gap-2  mt-8 max-sm:hidden">
         <span className="text-xl">★★★★★</span>
-        <span className="text-neutral-200 text-base">Trusted AI innovation 2025 by</span>
-        <span className="font-semibold pl-1">Gartner</span>
+        <span className="text-neutral-200 text-base font-semibold"> Leading the Next Wave of AI Innovation</span>
       </div>
       
     </section>

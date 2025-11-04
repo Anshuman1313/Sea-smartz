@@ -28,7 +28,7 @@ const CookieConsent = () => {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="fixed bottom-4 right-4 w-[90%] max-w-md 
            bg-neutral-900 text-white rounded-2xl shadow-lg p-4 
-           flex flex-col gap-3 md:flex-row md:items-center md:justify-between"
+           flex flex-col gap-3 md:flex-row md:items-center md:justify-between z-40"
         >
           <p className="text-sm text-white/90">
             We use cookies to improve your experience. Read our{" "}
