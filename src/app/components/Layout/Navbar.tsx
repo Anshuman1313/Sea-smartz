@@ -98,6 +98,8 @@ export const Navbar = () => {
           {/* <SeaSmartzLogo height={200} width={200} className='hidden'/>  */}
           
           <Link href="/contact">
+         <span className="sr-only">Contact SeaSmartz - Learn more by contacting us</span>
+
           <span>Contact</span>
           </Link>
           
