@@ -81,6 +81,8 @@ export default function TechCTA({ data }: TechCTAProps) {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-foreground/20 hover:border-[var(--chart-3)]/50 text-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105"
               >
+         <span className="sr-only">Contact SeaSmartz - Learn more by contacting us</span>
+
                 {data.secondaryCTA.text}
                 <ExternalLink className="w-5 h-5" />
               </Link>

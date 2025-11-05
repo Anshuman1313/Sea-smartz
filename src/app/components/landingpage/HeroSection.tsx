@@ -80,8 +80,8 @@ style={{
           </Link>
         </Button>
         <Button className=" max-sm:w-30 z-40 px-4 py-5 bg-muted-foreground/20 text-primary text-lg font-semibold rounded-[10px]  " variant="outline">
-         <Link href="/contact"> 
-         
+         <Link href="/contact" className=''> 
+         <span className="sr-only">Contact SeaSmartz - Learn more by contacting us</span>
          Learn More
          </Link>
         </Button>
