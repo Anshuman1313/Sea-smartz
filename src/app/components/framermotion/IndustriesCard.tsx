@@ -76,7 +76,7 @@ const IndustriesCard = () => {
     return (
         <div className='grid grid-cols-3 max-md:grid-cols-2 max-md:mx-auto  w-full '>
             {industries.map((Industry, index) => {
-                const Icon = Industry.icon as unknown as React.ComponentType<any>;
+                const Icon = Industry.icon as unknown as React.ComponentType<React.SVGProps<SVGSVGElement>>;
                 return (
 
                     <div key={Industry.id} className=' relative  p-4 '

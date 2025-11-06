@@ -102,7 +102,6 @@ const Navbar2 = () => {
   const NavRef = useRef<HTMLDivElement>(null);
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
 
 
   // Scroll animation setup

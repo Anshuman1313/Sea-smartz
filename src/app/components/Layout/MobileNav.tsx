@@ -1,5 +1,5 @@
 "use client"
-import { motion,useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 import React, { useRef, useState, } from "react";
@@ -11,32 +11,24 @@ interface SubItem {
   href: string;
 }
 
-interface DropdownCategory {
-  category: string;
-  items: SubItem[];
-}
 
-interface MenuItem {
-  label: string;
-  href?: string;
-  dropdown?: DropdownCategory[];
-}
+
 
 
 
 const MobileNav = () => {
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-    const NavRef = useRef<HTMLDivElement>(null);
+  const NavRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
- const { scrollY } = useScroll();
+  const { scrollY } = useScroll();
   const navBgColor = useTransform(
     scrollY,
     [0, 100],
     ["rgba(23,23,23,0)", "#000000"]
   );
 
- const navHeight = useTransform(scrollY, [0, 100], ["13vh", "10vh"]);
+  const navHeight = useTransform(scrollY, [0, 100], ["13vh", "10vh"]);
 
   const handleDropdownClick = (label: string) => {
     console.log(label, activeDropdown)
@@ -46,15 +38,15 @@ const MobileNav = () => {
 
   return (
     <motion.div
-     ref={NavRef}
+      ref={NavRef}
       style={{
-         height: navHeight,
+        height: navHeight,
         backgroundColor: navBgColor,
-      
+
       }}
       className="sticky h-[15vh] md:hidden font-sans top-0 z-40 flex items-center px-5  justify-between md:px-8 transition-all duration-300"
     >
-    
+
       <div className="text-2xl font-bold text-white">
         <Link href="/">
           <span className="">SEA</span>
@@ -65,8 +57,8 @@ const MobileNav = () => {
       {/* Mobile navigation */}
 
       <Hamburger isOpen={isOpen} toggle={() => setIsOpen(!isOpen)}
-      
-       />
+
+      />
       {
         isOpen && (
           <motion.ul
@@ -142,7 +134,10 @@ const MobileNav = () => {
 
                   </>
                 ) : (
-                  <Link href={item.href || "#"} className="hover:text-gray-300 transition-colors">
+                  <Link href={item.href || "#"} className="hover:text-gray-300 transition-colors"
+                    onClick={() => { setActiveDropdown(null); setIsOpen(false); }}
+
+                  >
                     {item.label}
                   </Link>
                 )}

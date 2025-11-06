@@ -7,9 +7,7 @@ import Navbar2 from "./components/Layout/Navbar2";
 import { Toaster } from "sonner";
 import LenisController from "./components/LenisController";
 import MobileNav from "./components/Layout/MobileNav";
-import { Navbar } from "./components/Layout/Navbar";
 import { Banner } from "./components/landingpage/Banner";
-import MobileFooter from "./components/Layout/MobileFooter";
 import CookieConsent from "./components/Layout/CookieConsent";
 import Script from "next/script";
 

@@ -3,7 +3,7 @@ import {
   HeartPulse, Shield, Users, Clock, Database, Lock,
   TrendingUp, CreditCard, Zap, BarChart, ShoppingCart,
   Package, Truck, Search, GraduationCap, BookOpen,
-  Video, MessageSquare, Award, CheckCircle
+  Video,
 } from 'lucide-react';
 
 export const industriesData: IndustriesData = {
@@ -114,7 +114,7 @@ export const industriesData: IndustriesData = {
       },
       secondaryCTA: {
         text: "View More Case Studies",
-        href: "/case-studies",
+        href: "/contact",
       },
       stats: [
         { label: "Healthcare Projects", value: "50+" },
@@ -231,7 +231,7 @@ export const industriesData: IndustriesData = {
       },
       secondaryCTA: {
         text: "View Finance Portfolio",
-        href: "/portfolio",
+        href: "/contact",
       },
       stats: [
         { label: "Fintech Projects", value: "65+" },
@@ -348,7 +348,7 @@ export const industriesData: IndustriesData = {
       },
       secondaryCTA: {
         text: "View E-commerce Portfolio",
-        href: "/portfolio",
+        href: "/contact",
       },
       stats: [
         { label: "E-commerce Sites Built", value: "80+" },
@@ -465,7 +465,7 @@ export const industriesData: IndustriesData = {
       },
       secondaryCTA: {
         text: "View Education Portfolio",
-        href: "/portfolio",
+        href: "/contact",
       },
       stats: [
         { label: "EdTech Projects", value: "45+" },

@@ -1,7 +1,7 @@
 import { TechnologiesData } from '@/lib/types';
 import { 
   Code, Zap, Package, Users, Server, Cog, Layers, Database, 
-  Cloud, Shield, Gauge, Lock, Blocks, Workflow, Cpu, Globe,
+  Cloud, Shield, Gauge, Blocks, Workflow, Cpu, Globe,
   FileCode, Repeat, GitBranch, Box, Puzzle, Binary
 } from 'lucide-react';
 
@@ -102,7 +102,7 @@ export const technologiesData: TechnologiesData = {
       },
       secondaryCTA: {
         text: "View Case Studies",
-        href: "/case-studies",
+        href: "/contact",
       },
       stats: [
         { label: "Projects Delivered", value: "50+" },
@@ -208,7 +208,7 @@ export const technologiesData: TechnologiesData = {
       },
       secondaryCTA: {
         text: "View Case Studies",
-        href: "/case-studies",
+        href: "/contact",
       },
       stats: [
         { label: "Next.js Projects", value: "40+" },
@@ -314,7 +314,7 @@ export const technologiesData: TechnologiesData = {
       },
       secondaryCTA: {
         text: "View Case Studies",
-        href: "/case-studies",
+        href: "/contact",
       },
       stats: [
         { label: "Vue Projects", value: "35+" },
@@ -420,7 +420,7 @@ export const technologiesData: TechnologiesData = {
       },
       secondaryCTA: {
         text: "View Case Studies",
-        href: "/case-studies",
+        href: "/contact",
       },
       stats: [
         { label: "APIs Built", value: "60+" },
@@ -526,7 +526,7 @@ export const technologiesData: TechnologiesData = {
       },
       secondaryCTA: {
         text: "View Case Studies",
-        href: "/case-studies",
+        href: "/contact",
       },
       stats: [
         { label: "Enterprise Projects", value: "45+" },
@@ -632,7 +632,7 @@ export const technologiesData: TechnologiesData = {
       },
       secondaryCTA: {
         text: "View Case Studies",
-        href: "/case-studies",
+        href: "/contact",
       },
       stats: [
         { label: "Python Projects", value: "55+" },
