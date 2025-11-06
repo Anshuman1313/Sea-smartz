@@ -14,10 +14,10 @@ const Indutries = () => {
     useGSAP(()=>{
         gsap.registerPlugin(SplitText,ScrollTrigger);
 
-        let split = SplitText.create(HeadingRef.current,{
+        const split = SplitText.create(HeadingRef.current,{
             type: "words"
         })
-        let split2 = SplitText.create(SubHeadingRef.current,{
+        const split2 = SplitText.create(SubHeadingRef.current,{
             type: "words,lines"
         })
         gsap.from(split.words,{
@@ -54,7 +54,7 @@ const Indutries = () => {
     })
 
   return (
-    <div className='flex flex-col justify-center items-center w-full space-y-4  mt-20 mb-20 font-sans text-foreground'>
+    <div className='flex flex-col justify-center items-center w-full space-y-4  md:mt-20 mb-20 font-sans text-foreground'>
 <GradientText className='text-base max-md:text-sm' leftColor='#fb923c' midColor='white' rightColor='#fb923c'>
   Scaling innovation, accelerating results.
 </GradientText>

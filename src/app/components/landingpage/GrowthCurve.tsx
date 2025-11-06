@@ -80,10 +80,10 @@ const GrowthCurve = () => {
                     <div className='text-2xl font-medium text-neutral-300'>Building software is easy. Building solutions that transform businesses is what we do. We help companies turn <span className=' font-bold '> Ideas into Impact.</span></div>
                     <div className='flex gap-2 text-sm font-medium '>
                         <div>
-                            As businesses scale, most face the same digital roadblocks: outdated systems, fragmented solutions, and technology that holds them back instead of propelling them forward. The knee-jerk reaction is to patch problems with quick fixes, saving "real transformation" for when there's more time and budget.
+                            As businesses scale, most face the same digital roadblocks: outdated systems, fragmented solutions, and technology that holds them back instead of propelling them forward. The knee-jerk reaction is to patch problems with quick fixes, saving &quot;real transformation&quot; for when there&apos;s more time and budget.
                         </div>
                         <div>
-                            Whether you're a startup with a bold vision, a growing business ready to scale, or an established company modernizing your tech stack, digital transformation is complex. We help companies accelerate their evolution by designing, coding, and shipping solutions that don't just work—they work for you. Not just meeting requirements, but anticipating needs. We turn your business challenges into our technical roadmap.
+                            Whether you&apos;re a startup with a bold vision, a growing business ready to scale, or an established company modernizing your tech stack, digital transformation is complex. We help companies accelerate their evolution by designing, coding, and shipping solutions that don&apos;t just work—they work for you. Not just meeting requirements, but anticipating needs. We turn your business challenges into our technical roadmap.
                         </div>
                     </div>
                 </div>

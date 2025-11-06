@@ -25,7 +25,7 @@ const options = [
     "More than 100K USD",
 ];
 
-export default function page() {
+export default function Page() {
     const [open, setOpen] = useState(false);
 
     const formik = useFormik({
@@ -77,7 +77,7 @@ export default function page() {
                     toast.success("Form submitted!", {
                         description: (
                             <span className="text-black">
-                                Thanks for reaching out. We'll get back to you soon.
+                                Thanks for reaching out. We&apos;ll get back to you soon.
                             </span>
                         ),
                         duration: 4000,

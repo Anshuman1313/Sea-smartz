@@ -1,7 +1,7 @@
 import { AboutPageData } from '@/lib/types';
 import { 
-  Target, Users, Lightbulb, Heart, Award, Shield,
-  Zap, TrendingUp, Globe
+  Target, Users, Lightbulb, Heart, Shield,
+  Zap,
 } from 'lucide-react';
 
 export const aboutData: AboutPageData = {
@@ -139,7 +139,7 @@ export const aboutData: AboutPageData = {
     },
     secondaryCTA: {
       text: "View Our Work",
-      href: "/portfolio",
+      href: "/contact",
     },
   },
 };

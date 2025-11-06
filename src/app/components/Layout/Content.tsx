@@ -1,8 +1,7 @@
 "use client"
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+
 import { FacebookIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/lib/icons';
-import { ArrowRight } from 'lucide-react';
+
 import Link from 'next/link'
 import React from 'react'
 import { Newsletter2 } from './Newsletter';
@@ -66,7 +65,7 @@ const navigation = [
 
 export default function Content() {
   return (
-    <div className='bg-chart-3 font-sans h-[90vh]  w-full flex flex-col px-7  max-md:h-auto max-md:py-6 max-md:px-6'>
+    <div className='bg-chart-3 font-sans h-[90vh]  w-full justify-end lg:justify-around pb-5 flex flex-col px-7  max-md:h-auto max-md:py-6 max-md:px-6'>
    
 
       {/* Navigation Section */}
@@ -74,7 +73,7 @@ export default function Content() {
         <div className=' w-1/3'><Newsletter2/></div>
         <Nav />
       </div>
-      <div className='font-bold text-[7rem] lg:text-[13rem] bg-gradient-to-b text-transparent from-neutral-100 to-orange-300 bg-clip-text  font-sans text-center '>
+      <div className='font-bold text-[15vw] bg-gradient-to-b text-transparent from-neutral-100 to-orange-300 bg-clip-text  font-sans text-center '>
         SEA<span className=''>SMARTZ</span>
       </div>
 

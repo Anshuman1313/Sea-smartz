@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -58,7 +58,6 @@ export default function AnimatedPathway({
     const stageRefs = useRef<(HTMLDivElement | null)[]>([]);
     const stageAnimations = useRef<gsap.core.Timeline[]>([]);
     const currentStageRef = useRef<number | undefined>(undefined);
-    const BarsHeightRef = useRef<(HTMLDivElement)>
 
     const positions = ["0.1% 22%", "22.5% 45%", "47% 72%", "72.5% 100%"];
     const lineheights = ["5rem", "6rem", "10rem", "17rem"]

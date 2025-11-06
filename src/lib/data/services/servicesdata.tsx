@@ -2,10 +2,10 @@
 import { ServicesData } from '@/lib/types';
 import { 
   Code, Zap, Users, Shield, Gauge, Blocks, Server, Cloud, 
-  GitBranch, Lock, Workflow, CheckCircle, FileCode, Repeat,
+  GitBranch, Lock, FileCode, 
   Layers, Database, Settings, Monitor, Rocket, Target, 
-  TrendingUp, BarChart, Lightbulb, MessageSquare, Search,
-  Briefcase, Award, BookOpen, LineChart
+  TrendingUp, BarChart, Lightbulb, Search,
+  Briefcase, Award,  LineChart
 } from 'lucide-react';
 
 export const servicesData: ServicesData = {
@@ -188,7 +188,7 @@ export const servicesData: ServicesData = {
       },
       secondaryCTA: {
         text: "View Portfolio",
-        href: "/portfolio",
+        href: "/contact",
       },
       stats: [
         { label: "Projects Delivered", value: "120+" },
@@ -377,7 +377,7 @@ export const servicesData: ServicesData = {
       },
       secondaryCTA: {
         text: "View Mobile Portfolio",
-        href: "/portfolio/mobile",
+        href: "/contact",
       },
       stats: [
         { label: "Apps Launched", value: "85+" },
@@ -563,7 +563,7 @@ export const servicesData: ServicesData = {
       },
       secondaryCTA: {
         text: "View API Case Studies",
-        href: "/case-studies/api",
+        href: "/contact",
       },
       stats: [
         { label: "APIs Developed", value: "90+" },
@@ -747,7 +747,7 @@ export const servicesData: ServicesData = {
       },
       secondaryCTA: {
         text: "View Cloud Case Studies",
-        href: "/case-studies/cloud",
+        href: "/contact",
       },
       stats: [
         { label: "Cloud Migrations", value: "150+" },
@@ -930,7 +930,7 @@ export const servicesData: ServicesData = {
       },
       secondaryCTA: {
         text: "View DevOps Success Stories",
-        href: "/case-studies/devops",
+        href: "/contact",
       },
       stats: [
         { label: "Deployment Speed", value: "10x Faster" },
@@ -1113,7 +1113,7 @@ export const servicesData: ServicesData = {
       },
       secondaryCTA: {
         text: "View Success Stories",
-        href: "/case-studies/consulting",
+        href: "/contact",
       },
       stats: [
         { label: "Consulting Projects", value: "200+" },

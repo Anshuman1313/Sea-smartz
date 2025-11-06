@@ -1,6 +1,5 @@
 import React from 'react'
 import Content from './Content';
-import { div } from 'motion/react-client';
 import MobileFooter from './MobileFooter';
 
 export default function Footer() {
