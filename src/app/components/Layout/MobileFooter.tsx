@@ -46,11 +46,11 @@ const navigation = {
 
 export default function MobileFooter() {
   return (
-    <footer className="md:hidden min-h-screen bg-background text-foreground py-8 px-2 flex flex-col items-center space-y-6 border-t border-white/10">
+    <footer className="md:hidden min-h-screen bg-background text-foreground py-8 px-2 flex flex-col  space-y-6 border-t border-white/10">
       {/* Brand */}
-      <h2 className="text-3xl font-bold text-chart-3 tracking-wide"><span className="text-foreground">SEA</span>SMARTZ</h2>
+      <h2 className="text-3xl text-center font-bold text-chart-3 tracking-wide"><span className="text-foreground">SEA</span>SMARTZ</h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+        <div className="grid  grid-cols-2 sm:grid-cols-3 px-4 gap-6">
           {Object.entries(navigation).map(([title, links]) => (
             <div key={title}>
               <h3 className="font-medium text-sm mb-2">{title}</h3>
@@ -68,14 +68,14 @@ export default function MobileFooter() {
         </div>
 
       {/* Social Icons */}
-      <div className="flex gap-5 mt-1">
+      <div className="flex gap-5 justify-center items-center mt-1">
         {socials.map((s) => (
           <Link
             key={s.label}
             href={s.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-orange-400 transition-colors"
+            className="hover:text-orange-400 transition-colors "
           >
             {s.icon}
           </Link>

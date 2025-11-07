@@ -23,7 +23,7 @@ export default function Home() {
       <HeroSection />
       <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0 overflow-clip">
 
-        <div className="min-h-screen text-4xl w-full  "
+        <div className=" text-4xl w-full  "
         >
           <LogoSection />
         </div>

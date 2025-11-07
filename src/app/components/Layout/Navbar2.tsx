@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import Link from "next/link";
 
 import React, { useEffect, useRef, useState } from "react";
+import { Logo1 } from "../svg_testing/Logo1";
 
 interface SubItem {
   label: string;
@@ -151,10 +152,17 @@ const Navbar2 = () => {
       className="sticky font-sans top-0 z-40 hidden md:flex items-center px-5  justify-between md:px-8 transition-all duration-300"
     >
       {/* Logo */}
-      <div className="text-2xl font-bold text-white">
-        <Link href="/">
-          <span className="">SEA</span>
-          <span className="text-chart-3">SMARTZ</span>
+      <div className="text-2xl flex font-bold text-white">
+        <div>
+          <Link href="/">
+          
+          <Logo1 className="size-15 "/>
+          </Link>
+        </div>
+        <Link href="/" className="flex justify-center items-center">
+        
+          <span className="text-chart-3">SEA</span>
+          <span className="">SMARTZ</span>
         </Link>
       </div>
 
