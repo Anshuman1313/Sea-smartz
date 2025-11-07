@@ -4,10 +4,42 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { div } from "framer-motion/client";
+import LogoSectionMobile from "../locomotive/LogoSectionMobile";
+import Image from "next/image";
 
 export default function LogoSection() {
   const HeadingRef = useRef<HTMLDivElement>(null)
   const SubHeadingRef = useRef<HTMLDivElement>(null)
+    const allLogos :string[] = [
+    "logos/max.svg",
+    "logos/leap.svg",
+    "logos/resend.svg",
+    "logos/strapi-full-logo-dark.svg",
+    "logos/neon.svg",
+    "logos/fal.svg",
+    
+  ];
+   const [logos, setLogos] = useState<string[]>(allLogos);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLogos((prev) => {
+        const newLogos = [...prev];
+        // pick two random indices
+        const i = Math.floor(Math.random() * newLogos.length);
+        let j = Math.floor(Math.random() * newLogos.length);
+        while (j === i) j = Math.floor(Math.random() * newLogos.length);
+
+        // swap
+        [newLogos[i], newLogos[j]] = [newLogos[j], newLogos[i]];
+        return newLogos;
+      });
+    }, 3000); // every 3s
+
+    return () => clearInterval(interval);
+  }, []);
+
   useGSAP(() => {
     // Split once and store for cleanup
     const splitHeading = new SplitText(HeadingRef.current, { type: "chars" });
@@ -53,17 +85,39 @@ export default function LogoSection() {
   }, []);
 
   return <>
-    <div className="flex flex-col text-center justify-center items-center font-sans gap-5 mt-30">
-      <h1 className="text-6xl  max-md:text-4xl text-foreground font-semibold" ref={HeadingRef}>Trusted by Leading
-        <span> Brands</span> </h1>
+    <div className="flex flex-col text-center justify-center items-center font-sans gap-5 mb-20 mt-30">
+      <h1 className="text-6xl  max-md:text-4xl text-foreground font-semibold" ref={HeadingRef}>Trusted by <span>Leading </span>
+        <span className="mx-2"> Brands</span> </h1>
       <h3 className="text-2xl max-md:text-sm " ref={SubHeadingRef}>Our partners and clients who rely on SeaSmartz for innovative IT solutions and digital growth.</h3>
 
 
       <DynamicLogoGrid />
 
+    <div className=" md:hidden grid grid-cols-2 w-full bg-white">
+      <AnimatePresence>
 
+      
+      {allLogos.map((logo, index) => (
 
-      <DynamicLogoGridMobile />
+        <motion.div key={index}
+            
+           
+       
+        
+        className="w-full h-[150px] items-center flex justify-center bg-background border-1 border-foreground/20 contain-content">
+        
+          
+          
+
+          <Image alt={`${index}`} src={logo} width= '100' height='900'  />
+        
+          
+          </motion.div>
+      ))}
+    </AnimatePresence>
+    </div>
+
+      {/* <DynamicLogoGridMobile /> */}
 
 
     </div>
@@ -139,7 +193,7 @@ export function DynamicLogoGridMobile(
       width="auto"
       height="100%"
       xmlns="http://www.w3.org/2000/svg"
-      className="md:hidden scale-160"
+      className="md:hidden"
 
     >
       {/* ===== Define Mask ===== */}

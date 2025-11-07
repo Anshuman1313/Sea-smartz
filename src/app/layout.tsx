@@ -10,6 +10,8 @@ import MobileNav from "./components/Layout/MobileNav";
 import { Banner } from "./components/landingpage/Banner";
 import CookieConsent from "./components/Layout/CookieConsent";
 import Script from "next/script";
+import Footer2 from "./components/Layout/Footer2";
+import Svgresponsive from "./components/svg_testing/Svgresponsive";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,7 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {children}
           </main>
          <CookieConsent/>
-          <Footer />
+         {/* <Svgresponsive/> */}
+         <Footer2/>
+          {/* <Footer /> */}
           <Toaster />
         </body>
       </ReactLenis>

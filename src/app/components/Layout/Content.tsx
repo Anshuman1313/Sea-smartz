@@ -7,10 +7,10 @@ import React from 'react'
 import { Newsletter2 } from './Newsletter';
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/sea-technologies-in/?viewAsMember=true", icon: <LinkedInIcon className='h-7 w-7 max-lg:h-5 max-lg:w-5' /> },
-  { label: "Twitter", href: "https://x.com/technologi29879", icon: <TwitterIcon className='h-7 w-7 max-lg:h-5 max-lg:w-5'/> },
-  { label: "Instagram", href: "https://www.instagram.com/sea.technologies/", icon: <InstagramIcon className='h-7 w-7 max-lg:h-5 max-lg:w-5'/> },
-  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61569627805201&sk=about", icon: <FacebookIcon className='h-7 w-7 max-lg:h-5 max-lg:w-5'/> }
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/sea-technologies-in/?viewAsMember=true", icon: <LinkedInIcon className='size-5 max-lg:h-5 max-lg:w-5' /> },
+  { label: "Twitter", href: "https://x.com/technologi29879", icon: <TwitterIcon className='size-5 mx-lg:h-5 max-lg:w-5'/> },
+  { label: "Instagram", href: "https://www.instagram.com/sea.technologies/", icon: <InstagramIcon className='size-5 max-lg:h-5 max-lg:w-5'/> },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61569627805201&sk=about", icon: <FacebookIcon className='size-5 max-lg:h-5 max-lg:w-5'/> }
 ];
 
 const navigation = [
@@ -88,30 +88,41 @@ export default function Content() {
 export function SocialLinks() {
   return (
     <div className="flex gap-5 justify-between px-2 text-sm flex-col md:flex-row items-center">
+        <p className= ' text-[2vh] font-sans flex gap-2'>
+          <span>© 2025 Sea Smartz. All rights reserved.</span>
+          <span>Terms of service</span>
+          <span>Terms of Use </span>
+          <span>Privacy Policy</span>
+          <span>Cookie policy</span>
+
+
+        </p>
       <div className='flex gap-6'>
         {socials.map(s => (
           <Link key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" 
-            className='hover:text-accent transition-colors ' aria-label={s.label}>
+            className='hover:text-foreground transition-colors ' aria-label={s.label}>
             {s.icon}
           </Link>
         ))}
       </div>
-      <p className= ' text-base lg:text-xl font-sans'>© 2025 Sea Smartz. All rights reserved.</p>
     </div>
   );
 }
 
-const Nav = () => (
-  <div className="grid grid-cols-2 md:grid-cols-5 gap-x-8 gap-y-6  mx-auto">
+export const Nav = () => (
+  <div className="grid grid-cols-2 md:grid-cols-5 gap-x-8 gap-y-6 font-sans  mx-auto">
     {navigation.map(section => (
-      <div key={section.title} className="flex flex-col  md:gap-2">
-        <h3 className="mb-1 font-sem md:font-bold text-foreground uppercase lg:text-xl tracking-wide">{section.title}</h3>
+      <div key={section.title} className="flex flex-col space-y-3">
+        <h3 className="  text-[13px] font-bold text-gray-400 uppercase  tracking-wide">{section.title}</h3>
+        <div className='flex flex-col space-y-2 '>
+
         {section.links.map(link => (
           <Link key={link.href} href={link.href} 
-            className=" text-[1rem] font-light text-foreground/80 hover:text-accent hover:underline transition-colors">
+            className="  text-[15px] font-medium text-foreground  hover:underline transition-colors">
             {link.label}
           </Link>
         ))}
+        </div>
       </div>
     ))}
   </div>
