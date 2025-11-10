@@ -44,11 +44,11 @@ export function Newsletter2() {
   }
 
   return (
-    <section className=" rounded-2xl px-6 flex flex-col font-sans  space-y-4">
-      <h2 className="text-2xl font-semibold">Subscribe to our Newsletter</h2>
-      <p className='text-foreground/80'>Join our growing community of innovators and get exclusive updates, stories, and ideas that shape the future of technology.</p>
-      <form onSubmit={handleSubmit} className="flex w-full gap-2">
-        <div className='flex h-10 bg-foreground/90 rounded-xl contain-content '>
+    <section className=" rounded-2xl  flex flex-col font-sans  space-y-2">
+      <h2 className="text-[15px]  text-gray-300 font-bold ">Subscribe to our Newsletter</h2>
+      <p className='text-foreground text-[15px]  pr-4'>Get the latest ideas and insights driving the future of tech.</p>
+      <form onSubmit={handleSubmit} className="flex w-full gap-2 pr-5">
+        <div className='flex relative mt-2 justify-start gap-2 contain-content pr-4 '>
 
         <Input
           type="email"
@@ -56,12 +56,12 @@ export function Newsletter2() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="bg-foreground/90  text-background placeholder:text-background/70   h-10 rounded-xl pr-3"
+          className="bg-foreground focus-visible:ring-0  text-background placeholder:text-background/70  rounded-full  pr-3"
         />
         <Button
           type="submit"
           disabled={loading}
-          className=" h-10 bg-accent hover:bg-background text-foreground  rounded-xl px-4"
+          className=" hover:bg-chart-3 bg-background rounded-full text-foreground   px-4"
         >
           {loading ? '...' : '→'}
         </Button>
