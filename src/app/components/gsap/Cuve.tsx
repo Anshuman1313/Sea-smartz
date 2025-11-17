@@ -239,7 +239,7 @@ export default function AnimatedPathway({
                         stroke={highlightColor}
                         strokeWidth="19"
                     />
-                </g>
+                </g> 
 
             </svg>
 
@@ -254,7 +254,7 @@ export default function AnimatedPathway({
                         className="stage mr-5  space-y-3 py-2 px-2 "
                     >
                         <div className="font-semibold text-xl  "> {stage.stageId}</div>
-                        <div className="absolute ml-3   bottom-50 contain-content z-100 items-center
+                        <div className="absolute ml-3   bottom-50 contain-content z-50 items-center
                         LineBar
                         "
                             style={{ height: lineheights[index] }}
