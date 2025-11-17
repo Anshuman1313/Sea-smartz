@@ -70,7 +70,7 @@ const navigation = [
 const Footer2 = () => {
   return (
     <>
-    <MobileFooter/>
+      <MobileFooter />
       <div className="max-md:hidden relative w-full aspect-[1688/896] h-[80vh] overflow-hidden ">
         <svg className="absolute w-0 h-0">
           <clipPath id="myClipPath" clipPathUnits="objectBoundingBox">
@@ -85,9 +85,23 @@ const Footer2 = () => {
 
         <div className="absolute inset-0  [clip-path:url(#myClipPath)]">
 
-          <div className='h-full w-full  '>
+          <div className='h-full w-full  '
+   style={{
+  backgroundImage: `
+    linear-gradient(
+      180deg,
+      #ff6a00 0%,
+      #1c0a00 50%,
+      #0a0400 70%,
+      #050200 90%,
+      #000000 100%
+    )
+  `,
+}}
+
+          >
             <Particles className=' absolute h-full w-full ' />
-            <StaticRadialGradient className="absolute inset-0  -z-10  h-full w-full object-cover " />
+            {/* <StaticRadialGradient className="absolute inset-0  -z-10  h-full w-full object-cover " /> */}
             <div className=' h-full w-full flex flex-col justify-between pb-2 pt-30'>
 
 
@@ -96,25 +110,25 @@ const Footer2 = () => {
 
                   <div className='flex  items-start text-3xl font-bold'>
 
-                  
-                  <Logo1 className='size-30  ' />
-                  <div className='flex flex-col  mt-10 items-start  h-full font-sans '>
-                    <div>
 
-                      <span className='text-chart-3'>SEA</span><span>SMARTZ</span>
-                    </div>
-                    <div className='font-semibold text-lg '>
-                      TECHNOLOGIES
+                    <Logo1 className='size-30  ' />
+                    <div className='flex flex-col  mt-10 items-start  h-full font-sans '>
+                      <div>
+
+                        <span className='text-chart-3'>SEA</span><span>SMARTZ</span>
+                      </div>
+                      <div className='font-semibold text-lg '>
+                        TECHNOLOGIES
+                      </div>
                     </div>
                   </div>
-                  </div>
 
-                  
-                 
+
+
                   {/* <Logo_with_text className='bg-white' viewBox='0 0 320 340' /> */}
                 </div>
                 <div className='h-full w-full '><Nav /></div>
-                <div className='w-[30%] '><Newsletter2/> </div>
+                <div className='w-[30%] '><Newsletter2 /> </div>
               </div>
               <div className='mb-1 pl-3 pr-4'><SocialLinks /></div>
 

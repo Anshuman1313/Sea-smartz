@@ -123,9 +123,9 @@ body {
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: #ff7700;
-  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-4: #090909;
   --chart-5: #ff7e69;  /* #ff7e69 but adjusted for better contrast */
-  --sidebar: oklch(0.216 0.006 56.043);
+  --sidebar: #191919;
   --sidebar-foreground: oklch(0.985 0.001 106.423);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0.001 106.423);

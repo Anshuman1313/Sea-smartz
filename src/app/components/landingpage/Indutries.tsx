@@ -54,7 +54,7 @@ const Indutries = () => {
     })
 
   return (
-    <div className='flex flex-col justify-center items-center w-full space-y-4  md:mt-20 mb-20 font-sans text-foreground'>
+    <div className='flex flex-col justify-center items-center w-full space-y-4  md:mt-0 mb-20 font-sans text-foreground'>
 <GradientText className='text-base max-md:text-sm' leftColor='#fb923c' midColor='white' rightColor='#fb923c'>
   Scaling innovation, accelerating results.
 </GradientText>

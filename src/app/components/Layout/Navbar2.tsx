@@ -149,7 +149,7 @@ const Navbar2 = () => {
         backdropFilter: backdropBlur,
         WebkitBackdropFilter: backdropBlur,
       }}
-      className="sticky font-sans top-0 z-40 hidden md:flex items-center px-5  justify-between md:px-8 transition-all duration-300"
+      className="sticky font-sans top-0 z-60 hidden md:flex items-center px-5  justify-between md:px-8 transition-all duration-300"
     >
       {/* Logo */}
       <div className="text-2xl flex font-bold text-white">

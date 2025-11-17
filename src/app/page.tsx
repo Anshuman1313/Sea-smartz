@@ -5,6 +5,7 @@ import HeroSection from "./components/landingpage/HeroSection";
 import GrowthCurve from "./components/landingpage/GrowthCurve";
 import Indutries from "./components/landingpage/Indutries";
 import LogoSection from "./components/landingpage/LogosSection";
+import LandingLoader from "./components/Layout/LandingLoader";
 
 export default function Home() {
   // useEffect(() => {
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <>
+    <LandingLoader/>
       <HeroSection />
       <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0 overflow-clip">
 
