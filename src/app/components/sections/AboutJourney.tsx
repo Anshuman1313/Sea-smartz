@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { AboutJourneyData } from '@/lib/types';
 import { Calendar } from 'lucide-react';
+import { useRef } from 'react';
 
 interface AboutJourneyProps {
   data: AboutJourneyData;
@@ -55,7 +56,7 @@ export default function AboutJourney({ data }: AboutJourneyProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="relative space-y-8"
+          className="relative space-y-8 "
         >
           {/* Vertical Line */}
           <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[var(--chart-3)] via-[var(--chart-3)]/50 to-transparent" />
