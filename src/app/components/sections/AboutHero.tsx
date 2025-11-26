@@ -124,7 +124,7 @@ export default function AboutHero({ data }: AboutHeroProps) {
   
       </div>
        <div className='relative h-full w-1/2 ml-10 mr-30 flex justify-center items-center max-md:hidden'>
-<div className='text-7xl absolute '>
+<div className='text-[1.5em] lg:text-[2.5em] xl:text-[3.5em]  md:text-[2em] absolute '>
   AI
 </div>
           {/* <AboutHeroSvg/> */}
