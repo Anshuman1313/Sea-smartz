@@ -6,6 +6,7 @@ import GrowthCurve from "./components/landingpage/GrowthCurve";
 import Indutries from "./components/landingpage/Indutries";
 import LogoSection from "./components/landingpage/LogosSection";
 import LandingLoader from "./components/Layout/LandingLoader";
+import BlurryCursorSection from "./components/gsap/MovingCursor/BlurryCursorSection";
 
 export default function Home() {
   // useEffect(() => {
@@ -33,11 +34,17 @@ export default function Home() {
           {/* <ScrollComponent/> */}
           <Indutries />
         </div>
+      
 
         <div className="min-h-screen max-md:hidden  w-full flex justify-center items-center ">
           <GrowthCurve />
 
         </div>
+          <div className="min-h-screen w-full overflow-hidden max-sm:hidden ">
+          <BlurryCursorSection/>
+          
+        </div>
+        
        
       </div>
 
