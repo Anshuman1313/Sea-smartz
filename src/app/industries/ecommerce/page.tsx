@@ -7,7 +7,7 @@ import { ecommerceData } from '@/lib/data/industries/industriesdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'E-commerce Solutions | Sea Smartz',
+  title: 'E-commerce Solutions | SeaSmartz',
   description: 'Scalable online stores that drive sales. Custom e-commerce platforms and marketplaces.',
 };
 

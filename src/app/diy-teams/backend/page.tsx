@@ -5,7 +5,7 @@ import { backendData } from '@/lib/data/teams/teamsdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hire Backend Developers | Sea Smartz',
+  title: 'Hire Backend Developers | SeaSmartz',
   description: 'Node.js, .NET, Java & more specialists. Hire experienced backend developers.',
 };
 

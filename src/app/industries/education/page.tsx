@@ -7,7 +7,7 @@ import { educationData } from '@/lib/data/industries/industriesdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Education Technology Solutions | Sea Smartz',
+  title: 'Education Technology Solutions | ',
   description: 'Learning management systems for modern education. LMS, virtual classrooms, and EdTech platforms.',
 };
 

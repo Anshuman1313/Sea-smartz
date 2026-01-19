@@ -3,7 +3,7 @@ import Link from "next/link"
 import { FacebookIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/lib/icons"
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/sea-technologies-in/?viewAsMember=true", icon: <LinkedInIcon className="h-5 w-5" /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/seasmartz/", icon: <LinkedInIcon className="h-5 w-5" /> },
   { label: "Twitter", href: "https://x.com/technologi29879", icon: <TwitterIcon className="h-5 w-5" /> },
   { label: "Instagram", href: "https://www.instagram.com/sea.technologies/", icon: <InstagramIcon className="h-5 w-5" /> },
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61569627805201&sk=about", icon: <FacebookIcon className="h-5 w-5" /> },
@@ -48,7 +48,7 @@ export default function MobileFooter() {
   return (
     <footer className="md:hidden min-h-screen bg-background text-foreground py-8 px-2 flex flex-col  space-y-6 border-t border-white/10">
       {/* Brand */}
-      <h2 className="text-3xl text-center font-bold text-chart-3 tracking-wide"><span className="text-foreground">SEA</span>SMARTZ</h2>
+      {/* <h2 className="text-3xl text-center font-bold text-chart-3  tracking-wide"><span className="text-foreground">SEA</span>SMARTZ</h2> */}
 
         <div className="grid  grid-cols-2 sm:grid-cols-3 px-4 gap-6">
           {Object.entries(navigation).map(([title, links]) => (
@@ -84,7 +84,7 @@ export default function MobileFooter() {
 
       {/* Copyright */}
       <p className="text-xs text-gray-400 mt-3 text-center">
-        © 2025 Sea Smartz. All rights reserved.
+        © 2025 SeaSmartz. All rights reserved.
       </p>
     </footer>
   )

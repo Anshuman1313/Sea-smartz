@@ -8,7 +8,7 @@ import { apiDevelopmentData } from '@/lib/data/services/servicesdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'API Development Services | Sea Smartz',
+  title: 'API Development Services | SeaSmartz',
   description: 'RESTful & GraphQL APIs that power your applications. Secure, scalable, and well-documented APIs.',
 };
 

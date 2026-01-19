@@ -8,7 +8,7 @@ import { devopsData } from '@/lib/data/services/servicesdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'DevOps Services | Sea Smartz',
+  title: 'DevOps Services | SeaSmartz',
   description: 'CI/CD pipelines & automation for faster delivery. Infrastructure as Code and container orchestration.',
 };
 

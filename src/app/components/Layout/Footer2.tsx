@@ -12,7 +12,7 @@ import { Newsletter2 } from './Newsletter';
 import MobileNav from './MobileNav';
 import MobileFooter from './MobileFooter';
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/sea-technologies-in/?viewAsMember=true", icon: <LinkedInIcon className='size-5 max-lg:h-5 max-lg:w-5' /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/seasmartz/", icon: <LinkedInIcon className='size-5 max-lg:h-5 max-lg:w-5' /> },
   { label: "Twitter", href: "https://x.com/SeaSmartz", icon: <TwitterIcon className='size-5 mx-lg:h-5 max-lg:w-5' /> },
   { label: "Instagram", href: "https://www.instagram.com/seasmartz/?hl=en", icon: <InstagramIcon className='size-5 max-lg:h-5 max-lg:w-5' /> },
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61583353533863", icon: <FacebookIcon className='size-5 max-lg:h-5 max-lg:w-5' /> }
@@ -105,8 +105,8 @@ const Footer2 = () => {
             <div className=' h-full w-full flex flex-col justify-between pb-2 pt-30'>
 
 
-              <div className=' flex'>
-                <div className='h-full w-[45%] space-y-3  mx-4'>
+              <div className=' flex px-10 '>
+                <div className='h-full w-[45%] space-y-3  mx-4 hidden'>
 
                   <div className='flex  items-start text-3xl font-bold'>
 
@@ -180,11 +180,10 @@ export function SocialLinks() {
   return (
     <div className="flex gap-5 justify-between px-2 text-sm flex-col md:flex-row items-center">
       <p className=' text-[2vh] font-sans flex gap-2'>
-        <span>© 2025 Sea Smartz. All rights reserved.</span>
-        <span>Terms of service</span>
-        <span>Terms of Use </span>
-        <span>Privacy Policy</span>
-        <span>Cookie policy</span>
+        <span>© 2025 SeaSmartz. All rights reserved.</span>
+        <span><Link href={"/privacy-policy"}>Privacy Policy</Link></span>
+        <span><Link href={"/cookie-policy"}>Cookie policy</Link></span>
+        <span><Link href={"/terms-of-service"}>Terms of service</Link></span>
 
 
       </p>

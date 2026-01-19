@@ -109,7 +109,7 @@ const Navbar2 = () => {
   const { scrollY } = useScroll();
 
   // Transform scroll values to navbar properties
-  const navHeight = useTransform(scrollY, [0, 100], ["13vh", "10vh"]);
+  const navHeight = useTransform(scrollY, [0, 100], ["80px", "70px"]);
   const navBgColor = useTransform(
     scrollY,
     [0, 100],

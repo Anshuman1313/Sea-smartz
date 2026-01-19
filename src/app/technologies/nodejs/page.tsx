@@ -7,7 +7,7 @@ import { nodejsData } from '@/lib/data/technologies/techdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Node.js Development Services | Sea Smartz',
+  title: 'Node.js Development Services | SeaSmartz',
   description: 'Scalable backend development with Node.js. Expert Node.js development services.',
 };
 

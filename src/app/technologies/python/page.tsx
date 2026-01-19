@@ -7,7 +7,7 @@ import { pythonData } from '@/lib/data/technologies/techdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Python Development Services | Sea Smartz',
+  title: 'Python Development Services | SeaSmartz',
   description: 'Versatile Python development for web, AI, and automation. Expert Python development services.',
 };
 

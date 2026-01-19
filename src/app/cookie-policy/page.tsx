@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy | SEA Smartz',
-  description: 'Cookie Policy for SEA Smartz - Learn how we use cookies and similar technologies, and how you can control your preferences.',
+  title: 'Cookie Policy | SeaSmartz',
+  description: 'Cookie Policy for SeaSmartz - Learn how we use cookies and similar technologies, and how you can control your preferences.',
 };
 
 export default function CookiePolicyPage() {

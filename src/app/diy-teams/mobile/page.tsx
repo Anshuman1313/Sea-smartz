@@ -5,7 +5,7 @@ import { mobileData } from '@/lib/data/teams/teamsdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hire Mobile App Developers | Sea Smartz',
+  title: 'Hire Mobile App Developers | SeaSmartz',
   description: 'Native & cross-platform specialists. Hire expert mobile developers.',
 };
 

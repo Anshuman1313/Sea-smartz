@@ -7,7 +7,7 @@ import { vueData } from '@/lib/data/technologies/techdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Vue.js Development Services | Sea Smartz',
+  title: 'Vue.js Development Services | SeaSmartz',
   description: 'Progressive JavaScript framework development with Vue.js. Expert Vue development services.',
 };
 

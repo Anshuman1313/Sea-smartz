@@ -77,13 +77,25 @@ export default function BlurryCursorSection() {
 
     return (
         <>
-               <div className="flex-col items-center space-y-3 justify-center ">
+               <div className="flex-col items-center space-y-2 justify-center font-sans ">
                 
                 
-               <GradientText className='text-base max-md:text-sm text-center ' leftColor='#fb923c' midColor='white' rightColor='#fb923c'>
-                Tech stack we offer
+               {/* <GradientText className='text-5xl pb-2 font-semibold text-foreground text-center ' leftColor='#fb923c' midColor='white' rightColor='#fb923c'>
+                <span className="text-5xl ">
+
+               Our Technology Expertise
+                </span>
+               </GradientText> */}
+               <GradientText className='text-base max-md:text-sm text-foreground text-center ' leftColor='#fb923c' midColor='white' rightColor='#fb923c' duration={5}>
+               
+
+       Built with the best.
+              
                </GradientText>
-            <h1 className="text-5xl  font-semibold text-foreground text-center">Our Technology Expertise</h1>
+               <h1 className='text-5xl font-semibold text-foreground text-center' >
+  Our Development <span className='text-chart-3'>Stack</span>
+</h1>
+
             <h3 className="text-base w-2/3 mx-auto text-center text-foreground/60">A robust, future-ready stack that enables secure, scalable, and high-performance digital products.</h3>
             </div> 
             <section

@@ -24,8 +24,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sea Smartz - Smart Software Solutions & Digital Transformation Services",
-  description: "Sea Smartz delivers innovative software solutions, AI-powered applications, and digital transformation services to help businesses scale and succeed in the digital age.",
+  title: "SeaSmartz - Smart Software Solutions & Digital Transformation Services",
+  description: "SeaSmartz delivers innovative software solutions, AI-powered applications, and digital transformation services to help businesses scale and succeed in the digital age.",
 };
 
 
