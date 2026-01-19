@@ -7,7 +7,7 @@ import { nextjsData } from '@/lib/data/technologies/techdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Next.js Development Services | Sea Smartz',
+  title: 'Next.js Development Services | SeaSmartz',
   description: 'Build production-ready web applications with Next.js. Expert Next.js development services.',
 };
 

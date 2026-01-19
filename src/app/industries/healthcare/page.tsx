@@ -7,7 +7,7 @@ import { healthcareData } from '@/lib/data/industries/industriesdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Healthcare IT Solutions | Sea Smartz',
+  title: 'Healthcare IT Solutions | SeaSmartz',
   description: 'HIPAA-compliant healthcare technology solutions. EMR, telehealth, and patient management systems.',
 };
 

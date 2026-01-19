@@ -89,7 +89,7 @@ export function SocialLinks() {
   return (
     <div className="flex gap-5 justify-between px-2 text-sm flex-col md:flex-row items-center">
         <p className= ' text-[2vh] font-sans flex gap-2'>
-          <span>© 2025 Sea Smartz. All rights reserved.</span>
+          <span>© 2025 SeaSmartz. All rights reserved.</span>
           <span>Terms of service</span>
           <span>Terms of Use </span>
           <span>Privacy Policy</span>

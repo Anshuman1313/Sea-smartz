@@ -8,7 +8,7 @@ import { consultingData } from '@/lib/data/services/servicesdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Technology Consulting Services | Sea Smartz',
+  title: 'Technology Consulting Services | SeaSmartz',
   description: 'Strategic guidance for digital transformation. Expert technology consulting and architecture services.',
 };
 

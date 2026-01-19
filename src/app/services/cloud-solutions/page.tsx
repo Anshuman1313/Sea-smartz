@@ -8,7 +8,7 @@ import { cloudSolutionsData } from '@/lib/data/services/servicesdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cloud Solutions Services | Sea Smartz',
+  title: 'Cloud Solutions Services | SeaSmartz',
   description: 'AWS, Azure & GCP cloud architecture experts. Cloud migration and managed services.',
 };
 

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | SEA Smartz',
-  description: 'Terms of Service for SEA Smartz - Read our terms and conditions for using our IT services and software development solutions.',
+  title: 'Terms of Service | SEASmartz',
+  description: 'Terms of Service for SEASmartz - Read our terms and conditions for using our IT services and software development solutions.',
 };
 
 export default function TermsOfServicePage() {

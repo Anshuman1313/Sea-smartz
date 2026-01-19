@@ -8,8 +8,8 @@ import { Metadata } from 'next';
 import AboutValues from '../components/sections/AboutValues';
 
 export const metadata: Metadata = {
-  title: 'About Us | Sea Smartz',
-  description: 'Learn about Sea Smartz - your trusted partner in digital transformation. 10+ years of innovation, 500+ projects delivered.',
+  title: 'About Us | SeaSmartz',
+  description: 'Learn about SeaSmartz - your trusted partner in digital transformation. 10+ years of innovation, 500+ projects delivered.',
 };
 
 export default function AboutPage() {

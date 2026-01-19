@@ -7,7 +7,7 @@ import { dotnetData } from '@/lib/data/technologies/techdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '.NET Core Development Services | Sea Smartz',
+  title: '.NET Core Development Services | SeaSmartz',
   description: 'Enterprise-grade applications with .NET Core. Expert .NET development services.',
 };
 

@@ -5,7 +5,7 @@ import { fullstackData } from '@/lib/data/teams/teamsdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hire Full Stack Developers | Sea Smartz',
+  title: 'Hire Full Stack Developers | SeaSmartz',
   description: 'End-to-end development expertise. Hire versatile full stack developers.',
 };
 

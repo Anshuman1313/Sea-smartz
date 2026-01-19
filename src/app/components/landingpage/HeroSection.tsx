@@ -65,7 +65,7 @@ style={{
         <span className="text-orange-400">IT Solutions</span> with AI
       </h1>
       <p className="text-lg md:text-xl text-center text-neutral-300 mb-8 max-w-2xl">
-        Sea Smartz delivers world-class IT services, seamlessly blending expert knowledge and AI to boost productivity, efficiency, and global reach for your enterprise.
+        SeaSmartz delivers world-class IT services, seamlessly blending expert knowledge and AI to boost productivity, efficiency, and global reach for your enterprise.
       </p>
       <div className="flex flex-col  justify-center items-center sm:flex-row gap-4 mb-6">
         

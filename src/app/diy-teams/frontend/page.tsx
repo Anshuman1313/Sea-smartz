@@ -5,7 +5,7 @@ import { frontendData } from '@/lib/data/teams/teamsdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hire Frontend Developers | Sea Smartz',
+  title: 'Hire Frontend Developers | SeaSmartz',
   description: 'React, Angular, Vue experts for your team. Hire skilled frontend developers.',
 };
 

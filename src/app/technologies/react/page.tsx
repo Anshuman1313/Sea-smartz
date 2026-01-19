@@ -8,7 +8,7 @@ import { reactData } from '@/lib/data/technologies/techdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'React.js Development Services | Sea Smartz',
+  title: 'React.js Development Services | SeaSmartz',
   description: 'Build interactive UIs with React.js. Expert React development services.',
 };
 

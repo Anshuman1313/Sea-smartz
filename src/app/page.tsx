@@ -22,30 +22,35 @@ export default function Home() {
 
   return (
     <>
-    <LandingLoader/>
+      <LandingLoader />
       <HeroSection />
       <div className="  bg-background text-muted-foreground flex flex-col px-2 md:px-0 overflow-clip">
+        <div className="min-h-screen w-full overflow-hidden max-md:hidden mt-10 ">
+          <BlurryCursorSection />
 
-        <div className=" text-4xl w-full  "
+        </div>
+        <div className=" text-4xl w-full md:hidden "
         >
           <LogoSection />
         </div>
+
         <div className="min-h-screen text-4xl w-full flex justify-center items-center   ">
           {/* <ScrollComponent/> */}
           <Indutries />
         </div>
-      
+
 
         <div className="min-h-screen max-md:hidden  w-full flex justify-center items-center ">
           <GrowthCurve />
 
         </div>
-          <div className="min-h-screen w-full overflow-hidden max-sm:hidden ">
-          <BlurryCursorSection/>
-          
+
+        <div className=" text-4xl w-full max-md:hidden "
+        >
+          <LogoSection />
         </div>
-        
-       
+
+
       </div>
 
 

@@ -7,7 +7,7 @@ import { financeData } from '@/lib/data/industries/industriesdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Financial Services IT Solutions | Sea Smartz',
+  title: 'Financial Services IT Solutions | SeaSmartz',
   description: 'Secure fintech applications. Digital banking, payment processing, and wealth management platforms.',
 };
 
