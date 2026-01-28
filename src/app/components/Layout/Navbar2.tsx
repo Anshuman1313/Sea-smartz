@@ -63,6 +63,12 @@ export const MENU_DATA: MenuItem[] = [
           { label: "Tech Consulting", description: "Strategic guidance", href: "/services/consulting" },
         ],
       },
+      {
+        category: "Marketing",
+        items: [
+          { label: "Digital Marketing", description: "SEO, PPC, paid ads & social media", href: "/services/digital-marketing" },
+        ],
+      },
     ],
   },
   {
