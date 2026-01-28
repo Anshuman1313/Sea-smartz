@@ -1,11 +1,11 @@
 
 import { ServicesData } from '@/lib/types';
-import { 
-  Code, Zap, Users, Shield, Gauge, Blocks, Server, Cloud, 
-  GitBranch, Lock, FileCode, 
-  Layers, Database, Settings, Monitor, Rocket, Target, 
+import {
+  Code, Zap, Users, Shield, Gauge, Blocks, Server, Cloud,
+  GitBranch, Lock, FileCode,
+  Layers, Database, Settings, Monitor, Rocket, Target,
   TrendingUp, BarChart, Lightbulb, Search,
-  Briefcase, Award,  LineChart
+  Briefcase, Award, LineChart
 } from 'lucide-react';
 
 export const servicesData: ServicesData = {
@@ -1122,13 +1122,214 @@ export const servicesData: ServicesData = {
       ],
     },
   },
+
+   // ============================================
+  // DIGITAL MARKETING
+  // ============================================
+  digitalMarketing: {
+  slug: "digital-marketing",
+
+  hero: {
+    title: "Digital Marketing",
+    tagline: "Performance-driven growth through digital channels",
+    description:
+      "We help businesses grow visibility, traffic, and revenue through data-driven digital marketing strategies. From paid advertising to SEO and social media, our focus is on measurable results and long-term growth.",
+    badges: [
+      "Paid Advertising",
+      "SEO & Organic Growth",
+      "Online Reputation Management",
+      "Social Media Marketing",
+    ],
+    ctaText: "Start Growing",
+    ctaHref: "/contact",
+    backgroundType: "gradient",
+  },
+
+  benefits: {
+    heading: "Why Choose Our Digital Marketing Services?",
+    subheading: "Strategic marketing built for sustainable growth",
+    benefits: [
+      {
+        icon: "TrendingUp",
+        title: "ROI-Focused Campaigns",
+        description:
+          "Every campaign is designed with clear KPIs, conversion tracking, and performance optimization to maximize return on investment.",
+      },
+      {
+        icon: "Target",
+        title: "Audience Precision",
+        description:
+          "Reach the right users at the right time using advanced targeting, intent-based keywords, and data-backed audience segmentation.",
+      },
+      {
+        icon: "Search",
+        title: "Organic & Paid Balance",
+        description:
+          "We combine SEO and paid advertising strategies to create short-term wins and long-term, compounding growth.",
+      },
+      {
+        icon: "Shield",
+        title: "Brand Reputation Control",
+        description:
+          "Protect and strengthen your brand with proactive online reputation management and sentiment monitoring.",
+      },
+      {
+        icon: "Users",
+        title: "Platform-Specific Expertise",
+        description:
+          "Tailored strategies for search engines, social platforms, and marketplaces instead of one-size-fits-all marketing.",
+      },
+      {
+        icon: "BarChart",
+        title: "Transparent Reporting",
+        description:
+          "Clear performance dashboards, actionable insights, and honest reporting—no vanity metrics.",
+      },
+    ],
+  },
+
+  process: {
+    heading: "Digital Marketing Execution Process",
+    subheading: "A structured system for consistent growth",
+    steps: [
+      {
+        step: "01",
+        title: "Audit & Research",
+        description:
+          "We analyze your market, competitors, audience behavior, and existing marketing efforts to uncover opportunities.",
+      },
+      {
+        step: "02",
+        title: "Strategy & Planning",
+        description:
+          "We define goals, select channels, allocate budgets, and create a performance-driven marketing roadmap.",
+      },
+      {
+        step: "03",
+        title: "Campaign Execution",
+        description:
+          "Campaigns are launched across SEO, PPC, social media, and ABM with continuous testing and optimization.",
+      },
+      {
+        step: "04",
+        title: "Measure & Scale",
+        description:
+          "We track KPIs, analyze performance, and scale what works to maximize long-term ROI.",
+      },
+    ],
+  },
+
+  deliverables: {
+    heading: "Digital Marketing Deliverables",
+    subheading: "Clear outputs with measurable impact",
+    deliverables: [
+      {
+        title: "Strategy & Planning",
+        description: "Foundational assets for successful execution",
+        items: [
+          "Digital marketing strategy document",
+          "Channel and budget allocation plan",
+          "Audience and funnel mapping",
+          "Campaign roadmaps and timelines",
+        ],
+      },
+      {
+        title: "Campaign Assets",
+        description: "Execution-ready marketing materials",
+        items: [
+          "Ad creatives and copy",
+          "SEO-optimized content recommendations",
+          "Landing page improvement suggestions",
+          "Social media content plans",
+        ],
+      },
+      {
+        title: "Reporting & Optimization",
+        description: "Data-backed insights and continuous improvement",
+        items: [
+          "Performance dashboards",
+          "Monthly marketing reports",
+          "Conversion and ROI analysis",
+          "Optimization and scaling recommendations",
+        ],
+      },
+    ],
+  },
+
+  packages: {
+    heading: "Digital Marketing Packages",
+    subheading: "Flexible engagement models for every growth stage",
+    packages: [
+      {
+        name: "Growth Starter",
+        description: "Ideal for early-stage and small businesses",
+        features: [
+          "SEO and paid ads audit",
+          "Campaign setup (1 channel)",
+          "Basic conversion tracking",
+          "Monthly performance report",
+          "Email support",
+        ],
+        pricing: "Starting at $3,000/month",
+      },
+      {
+        name: "Performance Accelerator",
+        description: "Multi-channel growth and optimization",
+        features: [
+          "SEO + PPC + social media management",
+          "Advanced audience targeting",
+          "Landing page optimization",
+          "Bi-weekly performance reviews",
+          "Dedicated account manager",
+        ],
+        pricing: "Starting at $7,500/month",
+        badge: "Popular",
+      },
+      {
+        name: "Scale Partner",
+        description: "Ongoing strategic growth partnership",
+        features: [
+          "Full-funnel digital marketing",
+          "ABM and retargeting campaigns",
+          "Continuous testing and scaling",
+          "Priority support",
+          "Quarterly growth strategy sessions",
+        ],
+        pricing: "Starting at $12,000/month",
+      },
+    ],
+  },
+
+  cta: {
+    heading: "Ready to Grow Your Digital Presence?",
+    subheading:
+      "Let’s build high-performing digital marketing systems that drive traffic, conversions, and revenue.",
+    primaryCTA: {
+      text: "Book a Strategy Call",
+      href: "/contact",
+    },
+    secondaryCTA: {
+      text: "View Case Studies",
+      href: "/contact",
+    },
+    stats: [
+      { label: "Campaigns Managed", value: "500+" },
+      { label: "Average ROI", value: "4x" },
+      { label: "Industries Served", value: "30+" },
+    ],
+  },
+}
+
+
 };
 
-export const { 
+export const {
   webDevelopment: webDevelopmentData,
   mobileApps: mobileAppsData,
   apiDevelopment: apiDevelopmentData,
   cloudSolutions: cloudSolutionsData,
   devops: devopsData,
-  consulting: consultingData
+  consulting: consultingData,
+  digitalMarketing: digitalMarketingData
+
 } = servicesData;

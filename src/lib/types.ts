@@ -120,7 +120,7 @@ export interface ProcessStep {
   step: string;
   title: string;
   description: string;
-  icon: ReactNode;
+  icon?: ReactNode;
 }
 
 // Service Process Section
@@ -133,7 +133,7 @@ export interface ServiceProcessData {
 // Service Deliverables
 export interface DeliverableItem {
   title: string;
-  description: string;
+  description?: string;
   items: string[];
 }
 
@@ -194,6 +194,7 @@ export interface ServicesData {
   cloudSolutions: ServicePageData;
   devops: ServicePageData;
   consulting: ServicePageData;
+  digitalMarketing: ServicePageData;
 }
 
 
