@@ -1,6 +1,6 @@
 import { TechnologiesData } from '@/lib/types';
-import { 
-  Code, Zap, Package, Users, Server, Cog, Layers, Database, 
+import {
+  Code, Zap, Package, Users, Server, Cog, Layers, Database,
   Cloud, Shield, Gauge, Blocks, Workflow, Cpu, Globe,
   FileCode, Repeat, GitBranch, Box, Puzzle, Binary
 } from 'lucide-react';
@@ -431,10 +431,132 @@ export const technologiesData: TechnologiesData = {
   },
 
   // ============================================
-  // .NET CORE
+  // .NET 
   // ============================================
   dotnet: {
     slug: 'dotnet',
+    hero: {
+      title: ".NET",
+      tagline: "Unified platform for building modern applications",
+      description:
+        "Build fast, secure, and scalable applications with .NET. Create web apps, APIs, desktop, mobile, microservices, and cloud-native solutions using Microsoft’s unified, open-source development platform.",
+      badges: ["Unified Platform", "High Performance", "Enterprise-Grade"],
+      ctaText: "Start Your .NET Project",
+      ctaHref: "/contact",
+      backgroundType: 'mesh',
+    },
+
+    features: {
+      heading: "Why Choose .NET?",
+      subheading: "One platform for all modern application development",
+      features: [
+        {
+          icon: <Cloud className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Cross-Platform",
+          description:
+            "Build and run applications on Windows, Linux, and macOS with a single, consistent platform.",
+        },
+        {
+          icon: <Zap className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Exceptional Performance",
+          description:
+            "Consistently ranked among the fastest frameworks for web APIs and cloud-native workloads.",
+        },
+        {
+          icon: <Shield className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Built-in Security",
+          description:
+            "Comprehensive security features including authentication, authorization, encryption, and secure defaults.",
+        },
+        {
+          icon: <Database className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Entity Framework",
+          description:
+            "Powerful ORM for working with relational and non-relational databases using LINQ and migrations.",
+        },
+        {
+          icon: <Box className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Cloud & Containers",
+          description:
+            "First-class support for Docker, Kubernetes, and cloud platforms like Azure, AWS, and GCP.",
+        },
+        {
+          icon: <GitBranch className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Modern Architecture",
+          description:
+            "Built-in dependency injection, middleware pipelines, and minimal APIs for clean and maintainable code.",
+        },
+      ],
+    },
+
+    specs: {
+      heading: "Technical Specifications",
+      subheading: "A unified, future-ready development platform",
+      specs: [
+        { label: "Initial Release", value: "2016", description: "Evolution of .NET Core" },
+        { label: "Current Version", value: "8.x", description: "LTS with Native AOT" },
+        { label: "License", value: "MIT", description: "Open source" },
+        { label: "Performance", value: "Industry Leading", description: "Optimized runtime" },
+        { label: "Language Support", value: "C#, F#, VB", description: "Multi-language ecosystem" },
+        { label: "Cloud Integration", value: "Multi-Cloud", description: "Azure, AWS & GCP" },
+      ],
+      additionalInfo:
+        ".NET is the unified evolution of .NET Core, providing a single platform for web, cloud, desktop, and mobile development with long-term support, top-tier performance, and modern tooling.",
+    },
+
+    useCases: {
+      heading: "What You Can Build with .NET",
+      subheading: "Modern applications across every domain",
+      useCases: [
+        {
+          image: "/images/placeholder-enterprise-web.jpg",
+          title: "Modern Web Applications",
+          description:
+            "Build secure, high-performance web applications and dashboards with modern architectures.",
+          techStack: [".NET 8", "ASP.NET Core", "SQL Server", "Azure"],
+        },
+        {
+          image: "/images/placeholder-api-gateway.jpg",
+          title: "APIs & Microservices",
+          description:
+            "Design scalable, resilient APIs and microservices with built-in observability and security.",
+          techStack: [".NET", "Minimal APIs", "Docker", "RabbitMQ"],
+        },
+        {
+          image: "/images/placeholder-cloud-native.jpg",
+          title: "Cloud-Native Systems",
+          description:
+            "Develop cloud-native, containerized applications with automatic scaling and fault tolerance.",
+          techStack: [".NET", "Kubernetes", "Redis", "Azure"],
+        },
+      ],
+    },
+
+    cta: {
+      heading: "Ready to Build with .NET?",
+      subheading:
+        "A single platform. Endless possibilities. Let’s build fast, secure, and future-proof solutions together.",
+      primaryCTA: {
+        text: "Start Your Project",
+        href: "/contact",
+      },
+      secondaryCTA: {
+        text: "View Case Studies",
+        href: "/contact",
+      },
+      stats: [
+        { label: "Projects Delivered", value: "50+" },
+        { label: "Years Experience", value: "10+" },
+        { label: "Production Uptime", value: "99.99%" },
+      ],
+    },
+  },
+
+  // ============================================
+  // .NET CORE
+  // ============================================
+  dotnetcore: {
+    slug: 'dotnetcore',
     hero: {
       title: ".NET Core",
       tagline: "Cross-platform framework for modern apps",
@@ -535,7 +657,6 @@ export const technologiesData: TechnologiesData = {
       ],
     },
   },
-
   // ============================================
   // PYTHON
   // ============================================
@@ -641,15 +762,139 @@ export const technologiesData: TechnologiesData = {
       ],
     },
   },
+  // ============================================
+  // Java
+  // ============================================
+  java: {
+  slug: 'java',
+  hero: {
+    title: "Java",
+    tagline: "Robust platform for building scalable applications",
+    description:
+      "Build reliable, scalable, and secure applications with Java. Create web apps, APIs, enterprise systems, microservices, and cloud-native solutions using one of the most mature and widely adopted platforms in the world.",
+    badges: ["Platform Independent", "Highly Scalable", "Enterprise-Proven"],
+    ctaText: "Start Your Java Project",
+    ctaHref: "/contact",
+    backgroundType: 'grid',
+  },
+
+  features: {
+    heading: "Why Choose Java?",
+    subheading: "A trusted platform powering enterprise systems worldwide",
+    features: [
+      {
+        icon: <Cloud className="w-10 h-10 text-[var(--chart-3)]" />,
+        title: "Platform Independent",
+        description:
+          "Write once, run anywhere. Java applications run consistently across operating systems and environments.",
+      },
+      {
+        icon: <Zap className="w-10 h-10 text-[var(--chart-3)]" />,
+        title: "High Performance",
+        description:
+          "Optimized JVM with JIT compilation delivers excellent performance for large-scale applications.",
+      },
+      {
+        icon: <Shield className="w-10 h-10 text-[var(--chart-3)]" />,
+        title: "Strong Security",
+        description:
+          "Built-in security model with robust APIs for authentication, authorization, and encryption.",
+      },
+      {
+        icon: <Database className="w-10 h-10 text-[var(--chart-3)]" />,
+        title: "Rich Ecosystem",
+        description:
+          "Massive ecosystem of frameworks and libraries like Spring, Hibernate, and JPA.",
+      },
+      {
+        icon: <Box className="w-10 h-10 text-[var(--chart-3)]" />,
+        title: "Cloud & Microservices",
+        description:
+          "Well-suited for microservices and cloud-native architectures with strong tooling support.",
+      },
+      {
+        icon: <GitBranch className="w-10 h-10 text-[var(--chart-3)]" />,
+        title: "Mature Architecture",
+        description:
+          "Proven architectural patterns and frameworks for building maintainable enterprise systems.",
+      },
+    ],
+  },
+
+  specs: {
+    heading: "Technical Specifications",
+    subheading: "A mature and future-ready platform",
+    specs: [
+      { label: "Initial Release", value: "1995", description: "Developed by Sun Microsystems" },
+      { label: "Current Version", value: "21", description: "Latest LTS release" },
+      { label: "License", value: "GPL + Classpath", description: "Open source" },
+      { label: "Performance", value: "Highly Optimized", description: "JVM with JIT" },
+      { label: "Language Support", value: "Java", description: "Strongly typed language" },
+      { label: "Cloud Integration", value: "Multi-Cloud", description: "AWS, Azure & GCP" },
+    ],
+    additionalInfo:
+      "Java continues to evolve with regular LTS releases, modern language features, and strong cloud-native support, making it a reliable choice for long-term enterprise applications.",
+  },
+
+  useCases: {
+    heading: "What You Can Build with Java",
+    subheading: "Enterprise-grade solutions across industries",
+    useCases: [
+      {
+        image: "/images/placeholder-enterprise-web.jpg",
+        title: "Enterprise Web Applications",
+        description:
+          "Build large-scale, secure enterprise web applications with proven frameworks.",
+        techStack: ["Java", "Spring Boot", "Hibernate", "PostgreSQL"],
+      },
+      {
+        image: "/images/placeholder-api-gateway.jpg",
+        title: "APIs & Microservices",
+        description:
+          "Create scalable RESTful APIs and microservices with strong observability and resilience.",
+        techStack: ["Java", "Spring Boot", "Docker", "Kafka"],
+      },
+      {
+        image: "/images/placeholder-cloud-native.jpg",
+        title: "Cloud-Native Systems",
+        description:
+          "Develop cloud-native applications designed for high availability and scalability.",
+        techStack: ["Java", "Kubernetes", "Redis", "AWS"],
+      },
+    ],
+  },
+
+  cta: {
+    heading: "Ready to Build with Java?",
+    subheading:
+      "A proven platform trusted by enterprises worldwide. Let’s build scalable, secure, and future-ready systems.",
+    primaryCTA: {
+      text: "Start Your Project",
+      href: "/contact",
+    },
+    secondaryCTA: {
+      text: "View Case Studies",
+      href: "/contact",
+    },
+    stats: [
+      { label: "Projects Delivered", value: "60+" },
+      { label: "Years Experience", value: "12+" },
+      { label: "Production Uptime", value: "99.99%" },
+    ],
+  },
+},
+
 };
 
 // Export individual tech data for easier imports
-export const { 
-  react: reactData, 
-  nextjs: nextjsData, 
-  vue: vueData, 
-  nodejs: nodejsData, 
-  dotnet: dotnetData, 
-  python: pythonData 
+export const {
+  react: reactData,
+  nextjs: nextjsData,
+  vue: vueData,
+  nodejs: nodejsData,
+  dotnet: dotnetData,
+  dotnetcore: dotnetcoreData,
+  python: pythonData,
+  java: javaData,
 } = technologiesData;
 

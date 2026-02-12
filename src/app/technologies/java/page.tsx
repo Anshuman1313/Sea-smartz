@@ -3,22 +3,22 @@ import TechFeatures from '@/app/components/sections/TechFeatures';
 import TechHero from '@/app/components/sections/TechHero';
 import TechSpecs from '@/app/components/sections/TechSpecs';
 import TechUseCases from '@/app/components/sections/TechUseCases';
-import { dotnetData } from '@/lib/data/technologies/techdata';
+import { javaData } from '@/lib/data/technologies/techdata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '.NET Development Services | SeaSmartz',
-  description: 'Build secure, scalable, and high-performance applications with .NET.',
+  title: 'Java Development Services | SeaSmartz',
+  description: 'Enterprise-grade applications with Java. Expert Java development services.',
 };
 
-export default function DotNetPage() {
+export default function JavaPage() {
   return (
     <main className="bg-background text-foreground">
-      <TechHero data={dotnetData.hero} />
-      <TechFeatures data={dotnetData.features} />
-      <TechSpecs data={dotnetData.specs} />
-      <TechUseCases data={dotnetData.useCases} />
-      <TechCTA data={dotnetData.cta} />
+      <TechHero data={javaData.hero} />
+      <TechFeatures data={javaData.features} />
+      <TechSpecs data={javaData.specs} />
+      <TechUseCases data={javaData.useCases} />
+      <TechCTA data={javaData.cta} />
     </main>
   );
 }

@@ -197,6 +197,205 @@ export const servicesData: ServicesData = {
       ],
     },
   },
+  aiMl: {
+    slug: 'ai-ml',
+    hero: {
+      title: "AI & Machine Learning",
+      tagline: "Intelligent solutions powered by data",
+      description:
+        "Turn data into intelligence with AI and Machine Learning solutions. We build scalable, secure, and production-ready AI systems that automate processes, generate insights, and drive smarter business decisions.",
+      badges: ["Data-Driven", "Scalable Models", "Enterprise-Ready"],
+      ctaText: "Start Your AI Project",
+      ctaHref: "/contact",
+      backgroundType: 'grid',
+    },
+
+    benefits: {
+      heading: "Why Choose Our AI & ML Services?",
+      subheading: "End-to-end solutions for intelligent systems",
+      benefits: [
+        {
+          icon: <Code className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Modern AI Stack",
+          description:
+            "We use proven tools like Python, TensorFlow, PyTorch, Scikit-learn, and cloud AI services to build reliable models.",
+        },
+        {
+          icon: <Gauge className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Performance at Scale",
+          description:
+            "Optimized models and pipelines designed to handle large datasets, real-time inference, and production workloads.",
+        },
+        {
+          icon: <Shield className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Secure & Ethical AI",
+          description:
+            "Strong focus on data security, privacy, compliance, and responsible AI practices throughout the lifecycle.",
+        },
+        {
+          icon: <Users className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Business-Focused Models",
+          description:
+            "We align models with real business objectives—accuracy, interpretability, and measurable ROI.",
+        },
+        {
+          icon: <Blocks className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Scalable Architecture",
+          description:
+            "Cloud-native ML architectures with MLOps pipelines for training, deployment, monitoring, and retraining.",
+        },
+        {
+          icon: <Rocket className="w-10 h-10 text-[var(--chart-3)]" />,
+          title: "Production Ready",
+          description:
+            "From experimentation to deployment, we ensure your AI models work reliably in real-world environments.",
+        },
+      ],
+    },
+
+    process: {
+      heading: "Our AI Development Process",
+      subheading: "From data to deployed intelligence",
+      steps: [
+        {
+          step: "01",
+          title: "Discovery & Data Analysis",
+          description:
+            "We understand business goals, assess data quality, define success metrics, and select the right AI approach.",
+          icon: <Target className="w-8 h-8 text-[var(--chart-3)]" />,
+        },
+        {
+          step: "02",
+          title: "Model Design & Prototyping",
+          description:
+            "Feature engineering, model selection, experimentation, and rapid prototyping to validate ideas quickly.",
+          icon: <Layers className="w-8 h-8 text-[var(--chart-3)]" />,
+        },
+        {
+          step: "03",
+          title: "Training & Evaluation",
+          description:
+            "Model training with rigorous testing, validation, bias checks, and performance optimization.",
+          icon: <Code className="w-8 h-8 text-[var(--chart-3)]" />,
+        },
+        {
+          step: "04",
+          title: "Deployment & Monitoring",
+          description:
+            "Deploy models to production with monitoring, logging, retraining strategies, and ongoing support.",
+          icon: <Rocket className="w-8 h-8 text-[var(--chart-3)]" />,
+        },
+      ],
+    },
+
+    deliverables: {
+      heading: "What You'll Receive",
+      subheading: "Complete AI & ML project deliverables",
+      deliverables: [
+        {
+          title: "AI Model Development",
+          description: "End-to-end machine learning solutions",
+          items: [
+            "Custom-trained ML / AI models",
+            "Data preprocessing and feature engineering pipelines",
+            "Model evaluation and performance reports",
+            "Inference APIs or batch prediction systems",
+            "Model versioning and reproducibility setup",
+          ],
+        },
+        {
+          title: "Data & Infrastructure",
+          description: "Scalable and secure ML infrastructure",
+          items: [
+            "Data pipelines and ETL workflows",
+            "Cloud-based training and deployment setup",
+            "MLOps pipelines (CI/CD for ML)",
+            "Monitoring and alerting for model drift",
+            "Scalable storage and compute configuration",
+          ],
+        },
+        {
+          title: "Documentation & Support",
+          description: "Clear documentation and knowledge transfer",
+          items: [
+            "Model architecture and design documentation",
+            "API and integration guides",
+            "Deployment and retraining instructions",
+            "Usage guidelines and best practices",
+            "Ongoing maintenance and optimization support",
+          ],
+        },
+      ],
+    },
+
+    packages: {
+      heading: "Service Packages",
+      subheading: "Flexible AI solutions for every stage",
+      packages: [
+        {
+          name: "Starter Package",
+          description: "Ideal for AI proof-of-concepts",
+          features: [
+            "Problem feasibility assessment",
+            "Data analysis and preprocessing",
+            "Baseline ML model",
+            "Performance evaluation report",
+            "1 month post-delivery support",
+          ],
+          pricing: "Starting at $7,000",
+        },
+        {
+          name: "Professional Package",
+          description: "Production-ready AI solutions",
+          features: [
+            "Custom ML model development",
+            "Advanced feature engineering",
+            "API-based model deployment",
+            "Cloud infrastructure setup",
+            "Monitoring and logging",
+            "3 months post-launch support",
+          ],
+          pricing: "Starting at $20,000",
+          badge: "Most Popular",
+        },
+        {
+          name: "Enterprise Package",
+          description: "Large-scale AI systems",
+          features: [
+            "End-to-end AI strategy and architecture",
+            "Multiple models and pipelines",
+            "Advanced MLOps implementation",
+            "High availability and scalability",
+            "Security and compliance alignment",
+            "6 months post-launch support",
+            "Dedicated AI lead and project manager",
+            "24/7 monitoring and optimization",
+          ],
+          pricing: "Custom Quote",
+        },
+      ],
+    },
+
+    cta: {
+      heading: "Ready to Build with AI?",
+      subheading:
+        "Let’s transform your data into intelligent systems that automate, predict, and scale with your business.",
+      primaryCTA: {
+        text: "Start Your Project",
+        href: "/contact",
+      },
+      secondaryCTA: {
+        text: "View Use Cases",
+        href: "/contact",
+      },
+      stats: [
+        { label: "AI Projects Delivered", value: "40+" },
+        { label: "Model Accuracy Gains", value: "30%+" },
+        { label: "Years AI Experience", value: "8+" },
+      ],
+    },
+  },
+
 
   // ============================================
   // MOBILE APPS
@@ -1123,202 +1322,202 @@ export const servicesData: ServicesData = {
     },
   },
 
-   // ============================================
+  // ============================================
   // DIGITAL MARKETING
   // ============================================
   digitalMarketing: {
-  slug: "digital-marketing",
+    slug: "digital-marketing",
 
-  hero: {
-    title: "Digital Marketing",
-    tagline: "Performance-driven growth through digital channels",
-    description:
-      "We help businesses grow visibility, traffic, and revenue through data-driven digital marketing strategies. From paid advertising to SEO and social media, our focus is on measurable results and long-term growth.",
-    badges: [
-      "Paid Advertising",
-      "SEO & Organic Growth",
-      "Online Reputation Management",
-      "Social Media Marketing",
-    ],
-    ctaText: "Start Growing",
-    ctaHref: "/contact",
-    backgroundType: "gradient",
-  },
-
-  benefits: {
-    heading: "Why Choose Our Digital Marketing Services?",
-    subheading: "Strategic marketing built for sustainable growth",
-    benefits: [
-      {
-        icon: "TrendingUp",
-        title: "ROI-Focused Campaigns",
-        description:
-          "Every campaign is designed with clear KPIs, conversion tracking, and performance optimization to maximize return on investment.",
-      },
-      {
-        icon: "Target",
-        title: "Audience Precision",
-        description:
-          "Reach the right users at the right time using advanced targeting, intent-based keywords, and data-backed audience segmentation.",
-      },
-      {
-        icon: "Search",
-        title: "Organic & Paid Balance",
-        description:
-          "We combine SEO and paid advertising strategies to create short-term wins and long-term, compounding growth.",
-      },
-      {
-        icon: "Shield",
-        title: "Brand Reputation Control",
-        description:
-          "Protect and strengthen your brand with proactive online reputation management and sentiment monitoring.",
-      },
-      {
-        icon: "Users",
-        title: "Platform-Specific Expertise",
-        description:
-          "Tailored strategies for search engines, social platforms, and marketplaces instead of one-size-fits-all marketing.",
-      },
-      {
-        icon: "BarChart",
-        title: "Transparent Reporting",
-        description:
-          "Clear performance dashboards, actionable insights, and honest reporting—no vanity metrics.",
-      },
-    ],
-  },
-
-  process: {
-    heading: "Digital Marketing Execution Process",
-    subheading: "A structured system for consistent growth",
-    steps: [
-      {
-        step: "01",
-        title: "Audit & Research",
-        description:
-          "We analyze your market, competitors, audience behavior, and existing marketing efforts to uncover opportunities.",
-      },
-      {
-        step: "02",
-        title: "Strategy & Planning",
-        description:
-          "We define goals, select channels, allocate budgets, and create a performance-driven marketing roadmap.",
-      },
-      {
-        step: "03",
-        title: "Campaign Execution",
-        description:
-          "Campaigns are launched across SEO, PPC, social media, and ABM with continuous testing and optimization.",
-      },
-      {
-        step: "04",
-        title: "Measure & Scale",
-        description:
-          "We track KPIs, analyze performance, and scale what works to maximize long-term ROI.",
-      },
-    ],
-  },
-
-  deliverables: {
-    heading: "Digital Marketing Deliverables",
-    subheading: "Clear outputs with measurable impact",
-    deliverables: [
-      {
-        title: "Strategy & Planning",
-        description: "Foundational assets for successful execution",
-        items: [
-          "Digital marketing strategy document",
-          "Channel and budget allocation plan",
-          "Audience and funnel mapping",
-          "Campaign roadmaps and timelines",
-        ],
-      },
-      {
-        title: "Campaign Assets",
-        description: "Execution-ready marketing materials",
-        items: [
-          "Ad creatives and copy",
-          "SEO-optimized content recommendations",
-          "Landing page improvement suggestions",
-          "Social media content plans",
-        ],
-      },
-      {
-        title: "Reporting & Optimization",
-        description: "Data-backed insights and continuous improvement",
-        items: [
-          "Performance dashboards",
-          "Monthly marketing reports",
-          "Conversion and ROI analysis",
-          "Optimization and scaling recommendations",
-        ],
-      },
-    ],
-  },
-
-  packages: {
-    heading: "Digital Marketing Packages",
-    subheading: "Flexible engagement models for every growth stage",
-    packages: [
-      {
-        name: "Growth Starter",
-        description: "Ideal for early-stage and small businesses",
-        features: [
-          "SEO and paid ads audit",
-          "Campaign setup (1 channel)",
-          "Basic conversion tracking",
-          "Monthly performance report",
-          "Email support",
-        ],
-        pricing: "Starting at $3,000/month",
-      },
-      {
-        name: "Performance Accelerator",
-        description: "Multi-channel growth and optimization",
-        features: [
-          "SEO + PPC + social media management",
-          "Advanced audience targeting",
-          "Landing page optimization",
-          "Bi-weekly performance reviews",
-          "Dedicated account manager",
-        ],
-        pricing: "Starting at $7,500/month",
-        badge: "Popular",
-      },
-      {
-        name: "Scale Partner",
-        description: "Ongoing strategic growth partnership",
-        features: [
-          "Full-funnel digital marketing",
-          "ABM and retargeting campaigns",
-          "Continuous testing and scaling",
-          "Priority support",
-          "Quarterly growth strategy sessions",
-        ],
-        pricing: "Starting at $12,000/month",
-      },
-    ],
-  },
-
-  cta: {
-    heading: "Ready to Grow Your Digital Presence?",
-    subheading:
-      "Let’s build high-performing digital marketing systems that drive traffic, conversions, and revenue.",
-    primaryCTA: {
-      text: "Book a Strategy Call",
-      href: "/contact",
+    hero: {
+      title: "Digital Marketing",
+      tagline: "Performance-driven growth through digital channels",
+      description:
+        "We help businesses grow visibility, traffic, and revenue through data-driven digital marketing strategies. From paid advertising to SEO and social media, our focus is on measurable results and long-term growth.",
+      badges: [
+        "Paid Advertising",
+        "SEO & Organic Growth",
+        "Online Reputation Management",
+        "Social Media Marketing",
+      ],
+      ctaText: "Start Growing",
+      ctaHref: "/contact",
+      backgroundType: "gradient",
     },
-    secondaryCTA: {
-      text: "View Case Studies",
-      href: "/contact",
+
+    benefits: {
+      heading: "Why Choose Our Digital Marketing Services?",
+      subheading: "Strategic marketing built for sustainable growth",
+      benefits: [
+        {
+          icon: "TrendingUp",
+          title: "ROI-Focused Campaigns",
+          description:
+            "Every campaign is designed with clear KPIs, conversion tracking, and performance optimization to maximize return on investment.",
+        },
+        {
+          icon: "Target",
+          title: "Audience Precision",
+          description:
+            "Reach the right users at the right time using advanced targeting, intent-based keywords, and data-backed audience segmentation.",
+        },
+        {
+          icon: "Search",
+          title: "Organic & Paid Balance",
+          description:
+            "We combine SEO and paid advertising strategies to create short-term wins and long-term, compounding growth.",
+        },
+        {
+          icon: "Shield",
+          title: "Brand Reputation Control",
+          description:
+            "Protect and strengthen your brand with proactive online reputation management and sentiment monitoring.",
+        },
+        {
+          icon: "Users",
+          title: "Platform-Specific Expertise",
+          description:
+            "Tailored strategies for search engines, social platforms, and marketplaces instead of one-size-fits-all marketing.",
+        },
+        {
+          icon: "BarChart",
+          title: "Transparent Reporting",
+          description:
+            "Clear performance dashboards, actionable insights, and honest reporting—no vanity metrics.",
+        },
+      ],
     },
-    stats: [
-      { label: "Campaigns Managed", value: "500+" },
-      { label: "Average ROI", value: "4x" },
-      { label: "Industries Served", value: "30+" },
-    ],
-  },
-}
+
+    process: {
+      heading: "Digital Marketing Execution Process",
+      subheading: "A structured system for consistent growth",
+      steps: [
+        {
+          step: "01",
+          title: "Audit & Research",
+          description:
+            "We analyze your market, competitors, audience behavior, and existing marketing efforts to uncover opportunities.",
+        },
+        {
+          step: "02",
+          title: "Strategy & Planning",
+          description:
+            "We define goals, select channels, allocate budgets, and create a performance-driven marketing roadmap.",
+        },
+        {
+          step: "03",
+          title: "Campaign Execution",
+          description:
+            "Campaigns are launched across SEO, PPC, social media, and ABM with continuous testing and optimization.",
+        },
+        {
+          step: "04",
+          title: "Measure & Scale",
+          description:
+            "We track KPIs, analyze performance, and scale what works to maximize long-term ROI.",
+        },
+      ],
+    },
+
+    deliverables: {
+      heading: "Digital Marketing Deliverables",
+      subheading: "Clear outputs with measurable impact",
+      deliverables: [
+        {
+          title: "Strategy & Planning",
+          description: "Foundational assets for successful execution",
+          items: [
+            "Digital marketing strategy document",
+            "Channel and budget allocation plan",
+            "Audience and funnel mapping",
+            "Campaign roadmaps and timelines",
+          ],
+        },
+        {
+          title: "Campaign Assets",
+          description: "Execution-ready marketing materials",
+          items: [
+            "Ad creatives and copy",
+            "SEO-optimized content recommendations",
+            "Landing page improvement suggestions",
+            "Social media content plans",
+          ],
+        },
+        {
+          title: "Reporting & Optimization",
+          description: "Data-backed insights and continuous improvement",
+          items: [
+            "Performance dashboards",
+            "Monthly marketing reports",
+            "Conversion and ROI analysis",
+            "Optimization and scaling recommendations",
+          ],
+        },
+      ],
+    },
+
+    packages: {
+      heading: "Digital Marketing Packages",
+      subheading: "Flexible engagement models for every growth stage",
+      packages: [
+        {
+          name: "Growth Starter",
+          description: "Ideal for early-stage and small businesses",
+          features: [
+            "SEO and paid ads audit",
+            "Campaign setup (1 channel)",
+            "Basic conversion tracking",
+            "Monthly performance report",
+            "Email support",
+          ],
+          pricing: "Starting at $3,000/month",
+        },
+        {
+          name: "Performance Accelerator",
+          description: "Multi-channel growth and optimization",
+          features: [
+            "SEO + PPC + social media management",
+            "Advanced audience targeting",
+            "Landing page optimization",
+            "Bi-weekly performance reviews",
+            "Dedicated account manager",
+          ],
+          pricing: "Starting at $7,500/month",
+          badge: "Popular",
+        },
+        {
+          name: "Scale Partner",
+          description: "Ongoing strategic growth partnership",
+          features: [
+            "Full-funnel digital marketing",
+            "ABM and retargeting campaigns",
+            "Continuous testing and scaling",
+            "Priority support",
+            "Quarterly growth strategy sessions",
+          ],
+          pricing: "Starting at $12,000/month",
+        },
+      ],
+    },
+
+    cta: {
+      heading: "Ready to Grow Your Digital Presence?",
+      subheading:
+        "Let’s build high-performing digital marketing systems that drive traffic, conversions, and revenue.",
+      primaryCTA: {
+        text: "Book a Strategy Call",
+        href: "/contact",
+      },
+      secondaryCTA: {
+        text: "View Case Studies",
+        href: "/contact",
+      },
+      stats: [
+        { label: "Campaigns Managed", value: "500+" },
+        { label: "Average ROI", value: "4x" },
+        { label: "Industries Served", value: "30+" },
+      ],
+    },
+  }
 
 
 };
@@ -1330,6 +1529,6 @@ export const {
   cloudSolutions: cloudSolutionsData,
   devops: devopsData,
   consulting: consultingData,
-  digitalMarketing: digitalMarketingData
-
+  digitalMarketing: digitalMarketingData,
+  aiMl : aiMlData
 } = servicesData;

@@ -86,7 +86,9 @@ export interface TechnologiesData {
   vue: TechnologyPageData;
   nodejs: TechnologyPageData;
   dotnet: TechnologyPageData;
+  dotnetcore: TechnologyPageData;
   python: TechnologyPageData;
+  java: TechnologyPageData;
 }
 
 
@@ -195,6 +197,7 @@ export interface ServicesData {
   devops: ServicePageData;
   consulting: ServicePageData;
   digitalMarketing: ServicePageData;
+  aiMl: ServicePageData;
 }
 
 

@@ -38,8 +38,10 @@ export const MENU_DATA: MenuItem[] = [
         category: "Backend",
         items: [
           { label: "Node.js", description: "JavaScript runtime environment", href: "/technologies/nodejs" },
-          { label: ".NET Core", description: "Cross-platform framework", href: "/technologies/dotnet" },
+          { label: ".NET ", description: "Unified platform for modern apps", href: "/technologies/dotnet" },
+          { label: ".NET Core", description: "Cross-platform framework", href: "/technologies/dotnetcore" },
           { label: "Python", description: "Versatile backend language", href: "/technologies/python" },
+          { label: "Java", description: "Enterprise-grade application platform", href: "/technologies/java" },
         ],
       },
     ],
@@ -47,6 +49,16 @@ export const MENU_DATA: MenuItem[] = [
   {
     label: "Services",
     dropdown: [
+            {
+        category: "AI & ML",
+        items: [
+          {
+            label: "AI & Machine Learning",
+            description: "AI-powered automation & insights",
+            href: "/services/ai-ml",
+          },
+        ],
+      },
       {
         category: "Development",
         items: [
@@ -161,20 +173,20 @@ const Navbar2 = () => {
       <div className="text-2xl flex font-bold text-white">
         <div>
           <Link href="/">
-          
-          <Logo1 className="size-15 "/>
+
+            <Logo1 className="size-15 " />
           </Link>
         </div>
         <Link href="/" className="flex justify-center items-center">
-        
+
           <span className="text-chart-3">SEA</span>
           <span className="">SMARTZ</span>
         </Link>
       </div>
 
- 
 
-     
+
+
 
 
 
@@ -241,7 +253,7 @@ const Navbar2 = () => {
                                 key={subItem.label}
                                 href={subItem.href}
                                 className="block px-4 py-3 hover:bg-foreground/30 transition-colors group/item"
-                                onClick={()=>setActiveDropdown(null)}
+                                onClick={() => setActiveDropdown(null)}
                               >
                                 <div className="font-semibold text-white group-hover/item:text-chart-3 transition-colors">
                                   {subItem.label}
